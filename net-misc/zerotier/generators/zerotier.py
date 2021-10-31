@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-import json
-
+import re
 
 async def generate(hub, **pkginfo):
 	json_data = await hub.pkgtools.fetch.get_page(f"https://api.github.com/repos/zerotier/ZeroTierOne/releases", is_json=True)
