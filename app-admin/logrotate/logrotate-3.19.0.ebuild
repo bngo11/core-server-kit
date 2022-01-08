@@ -6,7 +6,7 @@ inherit systemd tmpfiles
 
 DESCRIPTION="Rotates, compresses, and mails system logs"
 HOMEPAGE="https://github.com/logrotate/logrotate"
-SRC_URI="https://github.com/logrotate/logrotate/releases/download/3.18.1/logrotate-3.18.1.tar.gz -> logrotate-3.18.1.tar.gz"
+SRC_URI="https://github.com/logrotate/logrotate/releases/download/3.19.0/logrotate-3.19.0.tar.gz -> logrotate-3.19.0.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
