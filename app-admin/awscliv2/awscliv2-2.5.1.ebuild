@@ -23,7 +23,7 @@ RDEPEND="
 	dev-python/prompt_toolkit
 	dev-python/python-dateutil
 	dev-python/ruamel-yaml
-	!dev-python/awscli
+	!app-admin/awscli
 	!app-admin/awscli-bin
 "
 BDEPEND=""
