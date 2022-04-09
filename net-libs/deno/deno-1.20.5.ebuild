@@ -80,7 +80,6 @@ d3d12-0.4.1
 darling-0.10.2
 darling_core-0.10.2
 darling_macro-0.10.2
-dashmap-4.0.2
 dashmap-5.2.0
 data-encoding-2.3.2
 data-url-0.1.1
@@ -198,7 +197,7 @@ lexical-parse-integer-0.8.3
 lexical-util-0.8.3
 lexical-write-float-0.8.4
 lexical-write-integer-0.8.3
-libc-0.2.106
+libc-0.2.121
 libffi-2.0.0
 libffi-sys-1.3.0
 libloading-0.7.3
@@ -208,9 +207,7 @@ linked-hash-map-0.5.4
 lock_api-0.4.6
 log-0.4.14
 lru-cache-0.1.2
-lsp-types-0.91.1
-lspower-1.4.0
-lspower-macros-0.2.1
+lsp-types-0.92.1
 lzzzz-0.8.0
 malloc_buf-0.0.6
 match_cfg-0.1.0
@@ -220,7 +217,7 @@ memoffset-0.6.5
 metal-0.23.1
 mime-0.3.16
 miniz_oxide-0.4.4
-mio-0.7.14
+mio-0.8.2
 miow-0.3.7
 naga-0.8.3
 netif-0.1.3
@@ -229,7 +226,7 @@ nibble_vec-0.1.0
 nix-0.23.0
 node_resolver-0.1.1
 nodrop-0.1.14
-notify-5.0.0-pre.12
+notify-5.0.0-pre.14
 ntapi-0.3.6
 num-bigint-0.4.3
 num-bigint-dig-0.7.0
@@ -353,7 +350,7 @@ slab-0.4.5
 slotmap-1.0.6
 smallvec-1.8.0
 socket2-0.3.19
-socket2-0.4.2
+socket2-0.4.4
 sourcemap-6.0.1
 spin-0.5.2
 spirv-0.2.0+1.5.4
@@ -406,13 +403,18 @@ thiserror-impl-1.0.30
 time-0.1.44
 tinyvec-1.5.1
 tinyvec_macros-0.1.0
-tokio-1.14.0
+tokio-1.17.0
 tokio-macros-1.7.0
 tokio-rustls-0.23.2
 tokio-stream-0.1.8
 tokio-tungstenite-0.16.1
 tokio-util-0.6.9
+tokio-util-0.7.0
 toml-0.5.8
+tower-0.4.12
+tower-layer-0.3.1
+tower-lsp-0.16.0
+tower-lsp-macros-0.6.0
 tower-service-0.3.1
 tracing-0.1.32
 tracing-attributes-0.1.20
@@ -423,11 +425,9 @@ trust-dns-resolver-0.20.3
 trust-dns-server-0.20.3
 try-lock-0.2.3
 tungstenite-0.16.0
-twoway-0.2.2
 typed-arena-2.0.1
 typenum-1.15.0
 ucd-trie-0.1.3
-unchecked-index-0.2.2
 unic-char-property-0.9.0
 unic-char-range-0.9.0
 unic-common-0.9.0
@@ -457,6 +457,7 @@ walkdir-2.3.2
 want-0.3.0
 wasi-0.9.0+wasi-snapshot-preview1
 wasi-0.10.0+wasi-snapshot-preview1
+wasi-0.11.0+wasi-snapshot-preview1
 wasm-bindgen-0.2.78
 wasm-bindgen-backend-0.2.78
 wasm-bindgen-futures-0.4.28
@@ -503,7 +504,7 @@ inherit cargo
 
 DESCRIPTION="Deno is a simple, modern and secure runtime for JavaScript and TypeScript"
 HOMEPAGE="https://github.com/denoland/deno"
-SRC_URI="https://api.github.com/repos/denoland/deno/tarball/v1.20.4 -> deno-1.20.4.tar.gz
+SRC_URI="https://api.github.com/repos/denoland/deno/tarball/v1.20.5 -> deno-1.20.5.tar.gz
 	$(cargo_crate_uris ${CRATES})"
 
 LICENSE="MIT"
