@@ -14,7 +14,7 @@
 =net-libs/nodejs-6.17.1 python_single_target_python3_8 python_targets_python3_8
 =net-libs/nodejs-8.17.0 python_single_target_python3_8 python_targets_python3_8
 =net-libs/nodejs-9.11.2 python_single_target_python3_8 python_targets_python3_8
-app-admin/ansible python_single_target_pypy3 python_targets_pypy3
+app-admin/ansible python_single_target_python3_7 python_targets_python3_7
 app-admin/awscli python_single_target_python3_8 python_targets_python3_8
 app-admin/awscliv2 python_single_target_python3_8 python_targets_python3_8
 app-admin/cloud-init python_single_target_python3_8 python_targets_python3_8
