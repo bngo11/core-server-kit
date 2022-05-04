@@ -4,12 +4,12 @@
 EAPI=7
 PYTHON_COMPAT=( python3+ )
 
-SRC_URI="https://files.pythonhosted.org/packages/a3/1b/f43f8bdae1591d82a26b4a8e98d0066b730efc17cd1f9f45997de18703bd/certbot-dns-rfc2136-1.26.0.tar.gz"
+SRC_URI="https://files.pythonhosted.org/packages/6c/3b/18c155d85491969f75cc458794e56b16703d6cc4e1a81682eb26c7b58174/certbot-dns-nsone-1.27.0.tar.gz"
 KEYWORDS="*"
 
 inherit distutils-r1
 
-DESCRIPTION="RFC 2136 DNS Authenticator plugin for Certbot"
+DESCRIPTION="NS1 DNS Authenticator plugin for Certbot (Let's Encrypt Client)"
 HOMEPAGE="https://github.com/certbot/certbot https://letsencrypt.org/"
 
 LICENSE="Apache-2.0"
@@ -18,9 +18,9 @@ IUSE=""
 
 CDEPEND=">=dev-python/setuptools-1.0[${PYTHON_USEDEP}]"
 RDEPEND="${CDEPEND}
-	>=app-crypt/certbot-1.1.0[${PYTHON_USEDEP}]
-	>=dev-python/acme-0.29.0[${PYTHON_USEDEP}]
+	>=app-crypt/certbot-0.31.0[${PYTHON_USEDEP}]
+	>=dev-python/acme-0.39.0[${PYTHON_USEDEP}]
 	dev-python/mock[${PYTHON_USEDEP}]
 	dev-python/zope-interface[${PYTHON_USEDEP}]
-	dev-python/dnspython[${PYTHON_USEDEP}]"
+	>=dev-python/dns-lexicon-2.2.1[${PYTHON_USEDEP}]"
 DEPEND="${CDEPEND}"

@@ -4,7 +4,7 @@
 EAPI=7
 PYTHON_COMPAT=( python3+ )
 
-SRC_URI="https://files.pythonhosted.org/packages/9a/c0/6faba9ec8ca10d339eb858b138154d761ecce45dc77301a014fe3f271609/certbot-nginx-1.26.0.tar.gz"
+SRC_URI="https://files.pythonhosted.org/packages/d1/61/1b014f204fbf933a143dfc8406109ea1ac2a30bcf8ad5c90c76f45ddde4d/certbot-nginx-1.27.0.tar.gz"
 KEYWORDS="*"
 
 inherit distutils-r1

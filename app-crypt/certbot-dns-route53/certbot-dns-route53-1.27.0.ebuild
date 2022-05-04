@@ -4,7 +4,7 @@
 EAPI=7
 PYTHON_COMPAT=( python3+ )
 
-SRC_URI="https://files.pythonhosted.org/packages/73/23/3b4b03dd78db2704055911da385f6974c07377a807388071616a9a6a22bb/certbot-dns-route53-1.26.0.tar.gz"
+SRC_URI="https://files.pythonhosted.org/packages/97/2f/587db3c0bec25acd87faef67b55baa860e54cbce68686d6a21b0779402d1/certbot-dns-route53-1.27.0.tar.gz"
 KEYWORDS="*"
 
 inherit distutils-r1
