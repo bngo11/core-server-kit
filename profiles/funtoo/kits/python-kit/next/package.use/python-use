@@ -6,7 +6,6 @@
 =net-libs/nodejs-11.15.0 python_single_target_python3_7
 =net-libs/nodejs-12.22.12 python_single_target_python3_7
 =net-libs/nodejs-13.14.0 python_single_target_python3_7
-=net-libs/nodejs-14.19.1 python_single_target_python3_7
 =net-libs/nodejs-14.19.2 python_single_target_python3_7
 =net-libs/nodejs-15.14.0 python_single_target_python3_7
 =net-libs/nodejs-16.15.0 python_single_target_python3_7
