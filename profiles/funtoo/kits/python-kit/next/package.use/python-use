@@ -1,20 +1,14 @@
 =app-admin/ngxtop-0.0.2-r1 python_single_target_python2_7 python_targets_python2_7
-=app-admin/rsyslog-8.2204.1 python_single_target_python3_7
 =app-admin/salt-2019.2.5 python_single_target_python2_7 python_targets_python2_7
-=app-admin/salt-3004 python_single_target_python3_7
 =app-admin/salt-3004.1 python_single_target_python3_7
 =dev-python/SaltTesting-2017.6.1 python_single_target_python2_7 python_targets_python2_7
 =net-libs/nodejs-10.24.1 python_single_target_python3_7
 =net-libs/nodejs-11.15.0 python_single_target_python3_7
-=net-libs/nodejs-12.22.10 python_single_target_python3_7
 =net-libs/nodejs-12.22.12 python_single_target_python3_7
 =net-libs/nodejs-13.14.0 python_single_target_python3_7
-=net-libs/nodejs-14.19.0 python_single_target_python3_7
 =net-libs/nodejs-14.19.2 python_single_target_python3_7
 =net-libs/nodejs-15.14.0 python_single_target_python3_7
-=net-libs/nodejs-16.14.0 python_single_target_python3_7
 =net-libs/nodejs-16.15.0 python_single_target_python3_7
-=net-libs/nodejs-17.7.1 python_single_target_python3_7
 =net-libs/nodejs-17.9.0 python_single_target_python3_7
 =net-libs/nodejs-18.1.0 python_single_target_python3_7
 =net-libs/nodejs-4.9.1 python_single_target_python2_7 python_targets_python2_7
@@ -25,6 +19,7 @@ app-admin/ansible python_single_target_python3_7
 app-admin/awscli python_single_target_python3_7
 app-admin/awscliv2 python_single_target_python3_7
 app-admin/cloud-init python_single_target_python3_7
+app-admin/rsyslog python_single_target_python3_7
 app-admin/webapp-config python_single_target_python3_7
 app-crypt/certbot python_single_target_python3_7
 app-crypt/certbot-apache python_single_target_python3_7
