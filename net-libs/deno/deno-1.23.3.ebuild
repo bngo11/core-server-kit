@@ -277,8 +277,8 @@ phf-0.10.1
 phf_generator-0.10.0
 phf_macros-0.10.0
 phf_shared-0.10.0
-pin-project-1.0.10
-pin-project-internal-1.0.10
+pin-project-1.0.11
+pin-project-internal-1.0.11
 pin-project-lite-0.2.9
 pin-utils-0.1.0
 pkcs1-0.4.0
@@ -518,7 +518,7 @@ inherit cargo
 
 DESCRIPTION="Deno is a simple, modern and secure runtime for JavaScript and TypeScript"
 HOMEPAGE="https://github.com/denoland/deno"
-SRC_URI="https://api.github.com/repos/denoland/deno/tarball/v1.23.2 -> deno-1.23.2.tar.gz
+SRC_URI="https://api.github.com/repos/denoland/deno/tarball/v1.23.3 -> deno-1.23.3.tar.gz
 	$(cargo_crate_uris ${CRATES})"
 
 LICENSE="MIT"
