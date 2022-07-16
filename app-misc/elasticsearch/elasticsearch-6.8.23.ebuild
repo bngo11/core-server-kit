@@ -6,7 +6,7 @@ inherit systemd tmpfiles user
 
 DESCRIPTION="Free and Open, Distributed, RESTful Search Engine"
 HOMEPAGE="https://www.elastic.co/elasticsearch/"
-SRC_URI="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.8.23.tar.gz
+SRC_URI="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.8.23.tar.gz -> elasticsearch-6.8.23.tar.gz
 "
 
 LICENSE="Apache-2.0 BSD-2 Elastic-2.0 LGPL-3 MIT public-domain"
