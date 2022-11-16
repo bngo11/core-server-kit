@@ -56,29 +56,33 @@ async def generate(hub, **pkginfo):
 
 	# Create an ebuild for the most recent 3 major versions
 	for major in [latest.major, latest.major - 1, latest.major - 2]:
-		version = max([v for v in versions if v.major == major])
+		try:
+			version = max([v for v in versions if v.major == major])
 
-		# find available architecture tarballs on the elastic site
-		download_page = f"{download_url}/{github_repo}-{version.public.replace('.', '-')}"
-		html = await hub.pkgtools.fetch.get_page(download_page)
-		soup = BeautifulSoup(html, "html.parser").find_all("a", href=True)
+			# find available architecture tarballs on the elastic site
+			download_page = f"{download_url}/{github_repo}-{version.public.replace('.', '-')}"
+			html = await hub.pkgtools.fetch.get_page(download_page)
+			soup = BeautifulSoup(html, "html.parser").find_all("a", href=True)
 
-		tarballs = [a.get('href') for a in soup if 'linux' in a.get('href')]
-		if not len(tarballs):
-			tarballs = [a.get('href') for a in soup if '.tar.' in a.get('href')]
+			tarballs = [a.get('href') for a in soup if 'linux' in a.get('href')]
+			if not len(tarballs):
+				tarballs = [a.get('href') for a in soup if '.tar.' in a.get('href')]
 
-		artifacts = await generate_artifacts(hub, pkginfo, tarballs)
+			artifacts = await generate_artifacts(hub, pkginfo, tarballs)
 
-		# find the compatible node version for kibana-bin
-		if 'nodejs' in pkginfo:
-			pkginfo['nodejs'] = await get_minimum_node_version(artifacts[0][1])
+			# find the compatible node version for kibana-bin
+			if 'nodejs' in pkginfo:
+				pkginfo['nodejs'] = await get_minimum_node_version(artifacts[0][1])
 
-		ebuild = hub.pkgtools.ebuild.BreezyBuild(
-			**pkginfo,
-			version=version.public.replace('-', '_'),
-			major=major,
-			artifacts=dict(artifacts),
-		)
-		ebuild.push()
+			ebuild = hub.pkgtools.ebuild.BreezyBuild(
+				**pkginfo,
+				version=version.public.replace('-', '_'),
+				major=major,
+				artifacts=dict(artifacts),
+			)
+			ebuild.push()
+
+		except ValueError:
+			pass
 
 # vim: ts=4 sw=4 noet

@@ -1,39 +1,35 @@
 #!/usr/bin/env python3
 
-import json
+from bs4 import BeautifulSoup
+from packaging.version import Version
+import re
+
+# NOTE: this is a simple autogen that *should* be replaceable with an autogen.yaml instead
+# However, due to the formatting of the tags and releases on their GitHub repo, we need to do it manually
 
 async def generate(hub, **pkginfo):
-	json_data = await hub.pkgtools.fetch.get_page("https://api.github.com/repos/logrotate/logrotate/releases", is_json=True)
-	version = None
-	url = None
-
-	for item in json_data:
-		try:
-			if item["prerelease"] or item["draft"]:
-				continue
-
-			version = item["tag_name"]
-			list(map(int, version.split(".")))
-
-			for asset in item['assets']:
-				asset_name = asset["name"]
-
-				if asset_name.endswith("tar.gz"):
-					url = asset["browser_download_url"]
-					break
-
-			if url:
-				break
-
-		except (KeyError, IndexError, ValueError):
+	github_user = github_repo = 'logrotate'
+	releases = await hub.pkgtools.fetch.get_page(
+		f"https://api.github.com/repos/{github_user}/{github_repo}/releases", is_json=True
+	)
+	for release in releases:
+		if release["prerelease"] or release["draft"]:
 			continue
+		version = release["tag_name"]
+		url = release["tarball_url"]
+		break
 
-	if version and url:
-		ebuild = hub.pkgtools.ebuild.BreezyBuild(
-			**pkginfo,
-			version=version,
-			artifacts=[hub.pkgtools.ebuild.Artifact(url=url, final_name=asset_name)]
-		)
-		ebuild.push()
+	artifact = hub.pkgtools.ebuild.Artifact(url=url, final_name=f"{pkginfo['name']}-{version}.tar.gz")
 
-# vim: ts=4 sw=4 noet
+	ebuild = hub.pkgtools.ebuild.BreezyBuild(
+		**pkginfo,
+		version=version,
+		github_user=github_user,
+		github_repo=github_repo,
+		artifacts=[artifact],
+	)
+	ebuild.push()
+
+
+
+# vim: sw=4 ts=4 noet

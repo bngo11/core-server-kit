@@ -2,19 +2,18 @@
 
 EAPI=7
 
-inherit systemd tmpfiles
+inherit systemd tmpfiles autotools
 
 DESCRIPTION="Rotates, compresses, and mails system logs"
 HOMEPAGE="https://github.com/logrotate/logrotate"
-SRC_URI="{{artifacts[0].src_uri}}"
+SRC_URI="{{ artifacts[0].src_uri }}"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="*"
-IUSE="acl +cron selinux"
+IUSE="acl +cron selinux systemd"
 
-DEPEND="
-	>=dev-libs/popt-1.5
+DEPEND=">=dev-libs/popt-1.5
 	selinux? ( sys-libs/libselinux )
 	acl? ( virtual/acl )"
 RDEPEND="${DEPEND}
@@ -23,6 +22,10 @@ RDEPEND="${DEPEND}
 
 STATEFILE="${EPREFIX}/var/lib/misc/logrotate.status"
 OLDSTATEFILE="${EPREFIX}/var/lib/logrotate.status"
+
+PATCHES=(
+	"${FILESDIR}/${PN}-3.15.0-ignore-hidden.patch"
+)
 
 move_old_state_file() {
 	elog "logrotate state file is now located at ${STATEFILE}"
@@ -33,18 +36,17 @@ move_old_state_file() {
 	fi
 }
 
-install_cron_file() {
-	exeinto /etc/cron.daily
-	newexe "${S}"/examples/logrotate.cron "${PN}"
+post_src_unpack() {
+	if [ ! -d "${S}" ]; then
+		mv {{ github_user }}-{{ github_repo }}* "${S}" || die
+	fi
 }
 
-PATCHES=(
-	"${FILESDIR}/${PN}-3.15.0-ignore-hidden.patch"
-)
-
 src_prepare() {
-	sed -i -e 's#/usr/sbin/logrotate#/usr/bin/logrotate#' examples/logrotate.{cron,service} || die
 	default
+
+	sed -i -e 's#/usr/sbin/logrotate#/usr/bin/logrotate#' examples/logrotate.{cron,service} || die
+	eautoreconf
 }
 
 src_configure() {
@@ -66,9 +68,12 @@ src_install() {
 	insinto /etc
 	doins "${FILESDIR}"/logrotate.conf
 
-	use cron && install_cron_file
+	if use cron; then
+		exeinto /etc/cron.daily
+		newexe "${S}"/examples/logrotate.cron "${PN}"
+	fi
 
-	systemd_dounit examples/logrotate.{service,timer}
+	use systemd && systemd_dounit examples/logrotate.{service,timer}
 	newtmpfiles "${FILESDIR}"/${PN}.tmpfiles ${PN}.conf
 
 	keepdir /etc/logrotate.d
