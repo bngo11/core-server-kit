@@ -36,7 +36,6 @@ async def get_minimum_node_version(artifact):
 		package = os.path.join(artifact.extract_path, artifact.final_name.split("-linux")[0], "package.json")
 		package_info = json.load(open(package))
 	artifact.cleanup()
-
 	version = Version(package_info["engines"]["node"])
 	return { 'minimum': version.public, 'series': max(version.major, MINIMUM_STABLE_NODEJS) }
 
