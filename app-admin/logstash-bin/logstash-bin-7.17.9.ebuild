@@ -9,16 +9,12 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Tool for managing events and logs"
 HOMEPAGE="https://www.elastic.co/products/logstash"
-SRC_URI="
-	amd64? ( https://artifacts.elastic.co/downloads/logstash/logstash-7.17.9-linux-x86_64.tar.gz -> logstash-7.17.9-linux-x86_64.tar.gz )
-
-	arm64? ( https://artifacts.elastic.co/downloads/logstash/logstash-7.17.9-linux-aarch64.tar.gz -> logstash-7.17.9-linux-aarch64.tar.gz )
-"
+SRC_URI=""
 
 # source: LICENSE.txt and NOTICE.txt
 LICENSE="Apache-2.0 MIT Elastic-2.0"
 SLOT="0"
-KEYWORDS="-* amd64 arm64"
+KEYWORDS="-*"
 
 RESTRICT="strip"
 QA_PREBUILT="opt/logstash/vendor/jruby/lib/jni/*/libjffi*.so"
