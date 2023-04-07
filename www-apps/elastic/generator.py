@@ -53,35 +53,42 @@ async def generate(hub, **pkginfo):
 	versions = [Version(a["tag_name"].lstrip("v")) for a in releases]
 	latest = max([v for v in versions])
 
-	# Create an ebuild for the most recent 3 major versions
-	for major in [latest.major, latest.major - 1, latest.major - 2]:
-		try:
-			version = max([v for v in versions if v.major == major])
+	# Create an ebuild for the most recent 2 major versions
+	for major in [latest.major, latest.major - 1]:
+		version = max([v for v in versions if v.major == major])
+		# find available architecture tarballs on the elastic site
+		download_page = f"{download_url}/{github_repo}-{version.public.replace('.', '-')}"
+		html = await hub.pkgtools.fetch.get_page(download_page)
+		tarballs = []
 
-			# find available architecture tarballs on the elastic site
-			download_page = f"{download_url}/{github_repo}-{version.public.replace('.', '-')}"
-			html = await hub.pkgtools.fetch.get_page(download_page)
-			soup = BeautifulSoup(html, "html.parser").find_all("a", href=True)
+		# The most reliable way to extract version information from these pages is to look for a special <script> tag
+		# which contains Javascript (JSON). We can parse this, and extract the necessary information.
 
-			tarballs = [a.get('href') for a in soup if 'linux' in a.get('href')]
-			if not len(tarballs):
-				tarballs = [a.get('href') for a in soup if '.tar.' in a.get('href')]
+		soup = BeautifulSoup(html, "lxml")
+		json_data = json.loads(str(soup.find('script', id="__NEXT_DATA__" ).text))
+		if "entry" not in json_data["props"]["pageProps"]:
+			continue
+		package_data = json_data["props"]["pageProps"]["entry"][0][0]["package"]
+		for package in package_data:
+			if not package["title"].startswith("Linux"):
+				continue
+			if not package["url"].endswith(".tar.gz"):
+				continue
+			tarballs.append(package["url"])
+		if not tarballs:
+			raise hub.pkgtools.ebuild.BreezyError(f"No tarballs found for {pkginfo['name']} when looking at {download_page} __NEXT_DATA__ <script> tag.") 
+		artifacts = await generate_artifacts(hub, pkginfo, tarballs)
 
-			artifacts = await generate_artifacts(hub, pkginfo, tarballs)
+		# find the compatible node version for kibana-bin
+		if 'nodejs' in pkginfo:
+			pkginfo['nodejs'] = await get_minimum_node_version(artifacts[0][1])
 
-			# find the compatible node version for kibana-bin
-			if 'nodejs' in pkginfo:
-				pkginfo['nodejs'] = await get_minimum_node_version(artifacts[0][1])
-
-			ebuild = hub.pkgtools.ebuild.BreezyBuild(
-				**pkginfo,
-				version=version.public.replace('-', '_'),
-				major=major,
-				artifacts=dict(artifacts),
-			)
-			ebuild.push()
-
-		except ValueError:
-			pass
+		ebuild = hub.pkgtools.ebuild.BreezyBuild(
+			**pkginfo,
+			version=version.public.replace('-', '_'),
+			major=major,
+			artifacts=dict(artifacts),
+		)
+		ebuild.push()
 
 # vim: ts=4 sw=4 noet
