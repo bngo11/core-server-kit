@@ -1177,7 +1177,7 @@ EGO_SUM=(
 go-module_set_globals
 
 SRC_URI="https://github.com/caddyserver/caddy/tarball/0db29e2ce9799f652f3d16fd5aed6e426d23bd0a -> caddy-2.6.4-0db29e2.tar.gz
-https://direct.funtoo.org/58/b9/19/58b9193a652fdfe1ed76d0405bec6072def57737aca27067691b3b78236903186bfb3318e7e24ceb11e835241d6d34ac1aeb0b92149e4837c2087414240b369a -> caddy-2.6.4-funtoo-go-bundle-ab0f6a2ea5cbb394bfdb3d36507bb534397dce1c16f865385e59493cfce49094aeda8fae38e1b3c5e86330c34d75a99b1460685a522a6671bcec2c85438176d3.tar.gz"
+https://direct.funtoo.org/4a/9d/a3/4a9da3cc64faef01068fc44eb8ff79c9b67bd8852023786fe61d4514e0634fd73aa6a25e2b4a56af80f218ba9e12d4465b6fefa39cf97baa10e2ad5b77454f8d -> caddy-2.6.4-funtoo-go-bundle-ab0f6a2ea5cbb394bfdb3d36507bb534397dce1c16f865385e59493cfce49094aeda8fae38e1b3c5e86330c34d75a99b1460685a522a6671bcec2c85438176d3.tar.gz"
 
 DESCRIPTION="Fast, cross-platform HTTP/2 web server with automatic HTTPS"
 HOMEPAGE="https://caddyserver.com/ https://github.com/caddyserver/caddy"
