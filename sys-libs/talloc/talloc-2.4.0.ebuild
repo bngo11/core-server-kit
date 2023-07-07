@@ -1,16 +1,15 @@
-# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-PYTHON_COMPAT=( python3_{7,8,9} )
+PYTHON_COMPAT=( python3+ )
 PYTHON_REQ_USE="threads(+)"
 
-inherit waf-utils python-single-r1 multilib multilib-minimal
+inherit waf-utils python-single-r1
 
 DESCRIPTION="Samba talloc library"
 HOMEPAGE="https://talloc.samba.org/"
-SRC_URI="https://www.samba.org/ftp/${PN}/${P}.tar.gz"
+SRC_URI="https://www.samba.org/ftp/talloc/talloc-2.4.0.tar.gz -> talloc-2.4.0.tar.gz"
 
 LICENSE="GPL-3 LGPL-3+ LGPL-2"
 SLOT="0"
@@ -18,11 +17,12 @@ KEYWORDS="*"
 IUSE="compat +python"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+RESTRICT="test"
 
 RDEPEND="!elibc_FreeBSD? (
 			!elibc_SunOS? (
 				!elibc_Darwin? (
-					dev-libs/libbsd[${MULTILIB_USEDEP}]
+					dev-libs/libbsd
 				)
 			)
 		)
@@ -35,13 +35,6 @@ DEPEND="${RDEPEND}
 
 WAF_BINARY="${S}/buildtools/bin/waf"
 
-RESTRICT="test"
-
-MULTILIB_WRAPPED_HEADERS=(
-	# python goes only for native
-	/usr/include/pytalloc.h
-)
-
 pkg_setup() {
 	# try to turn off distcc and ccache for people that have a problem with it
 	export DISTCC_DISABLE=1
@@ -50,27 +43,21 @@ pkg_setup() {
 	python-single-r1_pkg_setup
 }
 
-src_prepare() {
-	default
-
-	# what would you expect of waf? i won't even waste time trying.
-	multilib_copy_sources
-}
-
-multilib_src_configure() {
+src_configure() {
+	export PYTHONHASHSEED=1
 	local extra_opts=(
 		$(usex compat --enable-talloc-compat1 '')
-		$(multilib_native_usex python '' --disable-python)
+		$(usex python '' --disable-python)
 		$([[ ${CHOST} == *-solaris* ]] && echo '--disable-symbol-versions')
 	)
 	waf-utils_src_configure "${extra_opts[@]}"
 }
 
-multilib_src_compile() {
+src_compile() {
 	waf-utils_src_compile
 }
 
-multilib_src_install() {
+src_install() {
 	waf-utils_src_install
 
 	# waf is stupid, and no, we can't fix the build-system, since it's provided

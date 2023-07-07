@@ -8,7 +8,7 @@ inherit waf-utils python-single-r1
 
 DESCRIPTION="Simple database API"
 HOMEPAGE="https://tdb.samba.org/"
-SRC_URI="https://samba.org/ftp/tdb/${P}.tar.gz"
+SRC_URI="{{src_uri}}"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -35,6 +35,7 @@ src_prepare() {
 }
 
 src_configure() {
+	export PYTHONHASHSEED=1
 	local extra_opts=()
 	if ! use python; then
 		extra_opts+=( --disable-python )
@@ -57,4 +58,5 @@ src_test() {
 
 src_install() {
 	waf-utils_src_install
+	use python && python_optimize
 }
