@@ -2,8 +2,6 @@ caddy:
   generator: github-1
   packages:
     - caddy:
-        extensions:
-          - golang
         github:
           user: caddyserver
           query: releases
