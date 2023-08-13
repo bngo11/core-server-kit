@@ -5,6 +5,7 @@ import json
 async def generate(hub, **pkginfo):
 	json_data = await hub.pkgtools.fetch.get_page("https://gitlab.com/api/v4/projects/3456094/repository/tags?per_page=50", is_json=True)
 	version = None
+	lock = '2.7'
 
 	for item in json_data:
 		try:
@@ -13,7 +14,7 @@ async def generate(hub, **pkginfo):
 				version = name.split('-')[-1]
 				ver = version.split(".")
 				list(map(int, ver))
-				if int(ver[-1]) < 90:
+				if int(ver[-1]) < 90 and '.'.join(ver[:2]) == lock:
 					break
 
 		except (IndexError, ValueError, KeyError):

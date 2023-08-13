@@ -124,8 +124,7 @@ BDEPEND="${PYTHON_DEPS}
 "
 
 PATCHES=(
-	"${FILESDIR}/${PN}-4.4.0-pam.patch"
-	"${FILESDIR}/${PN}-4.16.1-netdb-defines.patch"
+	"${FILESDIR}/${PN}-4.18.4-pam.patch"
 	"${FILESDIR}/ldb-2.5.2-skip-wav-tevent-check.patch"
 )
 
