@@ -7,10 +7,10 @@ inherit cargo user
 DESCRIPTION="A lightning-fast search engine that fits effortlessly into your apps, websites, and workflow"
 HOMEPAGE="https://www.meilisearch.com/"
 SRC_URI="
-	{{ artifacts["src"].src_uri }}
-	{{ artifacts["crates_bundle"].src_uri }}
-	{{ artifacts["unidic"].src_uri }}
-	mini-dashboard? ( {{ artifacts["dashboard"].src_uri }} )
+	https://github.com/meilisearch/meilisearch/tarball/cdb4b3e024a06472b9e2ec5e861c9998cfc7e964 -> meilisearch-1.3.2-cdb4b3e.tar.gz
+	https://direct.funtoo.org/ef/84/73/ef847370b62b70c2e7d4e54ddf2f7e78820771084d91c8b1d8edad29000a59adc9a3197eee18d9980efdfac6affb67cfa05cd628b5d415c4ae69e46d1b6145ed -> meilisearch-1.3.2-funtoo-crates-bundle-2e4c3a9bdc8f9944ff2a2780b95ebca0b1ae77d18d49bf7a2c71a07b89ec6c62334e14c016c070097d57de148f281e06828e4821b1133f21dcaa40c4910ce3b1.tar.gz
+	https://dotsrc.dl.osdn.net/osdn/unidic/58338/unidic-mecab-2.1.2_src.zip -> unidic-mecab-2.1.2_src.zip
+	mini-dashboard? ( https://github.com/meilisearch/mini-dashboard/releases/download/v0.2.11/build.zip -> meilisearch-mini-dashboard-83cd44ed1e5f97ecb581dc9f958a63f4ccc982d9.zip )
 "
 
 LICENSE="MIT"
@@ -24,7 +24,7 @@ BDEPEND="
 	virtual/rust
 "
 
-S="${WORKDIR}/{{ github_user }}-{{ github_repo }}-{{ sha[:7] }}"
+S="${WORKDIR}/meilisearch-meilisearch-cdb4b3e"
 
 MEILI_DATA_DIR="/var/lib/${PN}"
 
@@ -40,14 +40,14 @@ src_prepare() {
 	local lindera_unidic_build=$(find "${WORKDIR}"/cargo_home/gentoo/lindera-unidic-* -iname build.rs)
 
 	# Replace the input/unpacked folder with our version
-	sed -i 's|\(let input_dir =.*\)\("unidic-mecab.*"\)\(.*\)|\1"{{ artifacts["unidic"].final_name.rsplit(".", 1)[0] }}"\3|' "${lindera_unidic_build}"
+	sed -i 's|\(let input_dir =.*\)\("unidic-mecab.*"\)\(.*\)|\1"unidic-mecab-2.1.2_src"\3|' "${lindera_unidic_build}"
 
 	# Replace the path to the source with the one downloaded by the ebuild
-	sed -i "s|\(let source_path_for_build =\).*$|\1 Path::new("'"'"${DISTDIR}/{{ artifacts["unidic"].final_name }}"'"'");|" "${lindera_unidic_build}"
+	sed -i "s|\(let source_path_for_build =\).*$|\1 Path::new("'"'"${DISTDIR}/unidic-mecab-2.1.2_src.zip"'"'");|" "${lindera_unidic_build}"
 
 	if use mini-dashboard; then
 		# Inject path to downloaded mini-dashboard build
-		sed -i "s|{{ dashboard_url }}|${DISTDIR}/{{ artifacts["dashboard"].final_name }}|g" "${S}"/meilisearch/Cargo.toml
+		sed -i "s|https://github.com/meilisearch/mini-dashboard/releases/download/v0.2.11/build.zip|${DISTDIR}/meilisearch-mini-dashboard-83cd44ed1e5f97ecb581dc9f958a63f4ccc982d9.zip|g" "${S}"/meilisearch/Cargo.toml
 
 		# Replace HTTP fetch with direct file read
 		sed -i -r 's|(let dashboard_assets_bytes =)(.*)$|\1 std::fs::read(url)?;|' "${S}"/meilisearch/build.rs
@@ -65,7 +65,7 @@ src_configure() {
 }
 
 src_compile() {
-	export VERGEN_GIT_SHA="{{ sha }}"
+	export VERGEN_GIT_SHA="cdb4b3e024a06472b9e2ec5e861c9998cfc7e964"
 	export VERGEN_GIT_SEMVER_LIGHTWEIGHT="${PV}"
 
 	cargo build --release -p meilisearch \
