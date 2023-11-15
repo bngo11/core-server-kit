@@ -7,7 +7,7 @@ inherit distutils-r1
 
 DESCRIPTION=""
 HOMEPAGE="https://github.com/aws/aws-cli"
-SRC_URI="https://github.com/aws/aws-cli/tarball/d61d07799c5c4d2d40d5e26c6d6efed474f98501 -> aws-cli-2.13.34-d61d077.tar.gz
+SRC_URI="https://github.com/aws/aws-cli/tarball/8a4f8bf7c4937d6bee663eb0973e9e0f6a12bef1 -> aws-cli-2.13.36-8a4f8bf.tar.gz
 "
 
 DEPEND=""
@@ -29,7 +29,7 @@ KEYWORDS="*"
 
 post_src_unpack() {
 	if [ ! -d "${S}" ]; then
-		mv "${WORKDIR}"/aws-aws-cli* "$S" || die
+		mv "${WORKDIR}"/aws-* "$S" || die
 	fi
 }
 
