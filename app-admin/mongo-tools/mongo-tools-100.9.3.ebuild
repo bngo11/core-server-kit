@@ -172,14 +172,14 @@ EGO_SUM=(
 
 go-module_set_globals
 
-SRC_URI="https://github.com/mongodb/mongo-tools/archive/c1f27fa35d2a8574d2e6b77bca5623e6046e2e46.tar.gz -> mongo-tools-100.9.1-c1f27fa3.tar.gz
-https://direct.funtoo.org/d7/93/0e/d7930e5b28efa43a836da803cac5473b8148fc36bdd5916e66e5e84d1ffc57c1f3c6217c32ceb851df98ad43e3676a954f27c80239577523ccfaf55c81ed2af1 -> mongo-tools-100.9.1-funtoo-go-bundle-cb3d7de3b2e6d1ab467a413e54921983d524dfc9a4a2bbe69b456997ff75e2c9d632196860e5462b2a61f3f3400f93c20dcf889ed08b853d8aa4b6e987db2a36.tar.gz"
+SRC_URI="https://github.com/mongodb/mongo-tools/archive/f76b033ec456e067662c0dd24ab8b438abe294c1.tar.gz -> mongo-tools-100.9.3-f76b033e.tar.gz
+https://direct.funtoo.org/9b/25/00/9b2500e403bde72fdefd318d23ccbe3213f3d9debdbeedb70ec19a6a88169f8d01b6a891782772905e82a53f91e0bb24459bc61b48b77fca5c3f183710c0d3cb -> mongo-tools-100.9.3-funtoo-go-bundle-cb3d7de3b2e6d1ab467a413e54921983d524dfc9a4a2bbe69b456997ff75e2c9d632196860e5462b2a61f3f3400f93c20dcf889ed08b853d8aa4b6e987db2a36.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="*"
 IUSE="sasl ssl"
-S="${WORKDIR}/mongo-tools-c1f27fa35d2a8574d2e6b77bca5623e6046e2e46"
+S="${WORKDIR}/mongo-tools-f76b033ec456e067662c0dd24ab8b438abe294c1"
 
 RDEPEND="
 	net-libs/libpcap
@@ -203,7 +203,7 @@ src_compile() {
 
 		go build -mod=mod \
 			-o bin/"${bin_name}" \
-			-ldflags "-X main.VersionStr=${PV} -X main.GitCommit=c1f27fa35d2a8574d2e6b77bca5623e6046e2e46" \
+			-ldflags "-X main.VersionStr=${PV} -X main.GitCommit=f76b033ec456e067662c0dd24ab8b438abe294c1" \
 			-buildmode=pie \
 			--tags "${myconf[*]}" \
 			./"${bin_path}" || die "compile failed"
