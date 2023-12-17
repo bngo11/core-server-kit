@@ -8,7 +8,7 @@ DESCRIPTION="A lightning-fast search engine that fits effortlessly into your app
 HOMEPAGE="https://www.meilisearch.com/"
 SRC_URI="
 	https://github.com/meilisearch/meilisearch/tarball/afa8f273a8e958ac5fba8bc6253d5b97473fcbfb -> meilisearch-1.5.1-afa8f27.tar.gz
-	https://direct.funtoo.org/41/f9/23/41f923573f444dac4c54cd7114be530fffdf6c815318e9e618f8f27e5a3ca5cd41e943c7a7e96402a0ed28b83230837cb125054deb08e777a1e774388c27da91 -> meilisearch-1.5.1-funtoo-crates-bundle-c5efbe339df9842cfe1eb24cf1d699871d2f84bab41b4f2709a74e31a961fc2222e183ed552462f847ee6987142f1f9ce629a5d3396a91af8fe7399d4528034e.tar.gz
+	https://direct.funtoo.org/85/a7/45/85a7450d5308506bb31df36293ca70759a0c18add996eb8c2ec7c75d02e4059827063e86f61c75fa1b19cfe7c532e55629fdf5f4899720dd259b20453eeadceb -> meilisearch-1.5.1-funtoo-crates-bundle-c5efbe339df9842cfe1eb24cf1d699871d2f84bab41b4f2709a74e31a961fc2222e183ed552462f847ee6987142f1f9ce629a5d3396a91af8fe7399d4528034e.tar.gz
 	https://dotsrc.dl.osdn.net/osdn/unidic/58338/unidic-mecab-2.1.2_src.zip -> unidic-mecab-2.1.2_src.zip
 	mini-dashboard? ( https://github.com/meilisearch/mini-dashboard/releases/download/v0.2.11/build.zip -> meilisearch-mini-dashboard-83cd44ed1e5f97ecb581dc9f958a63f4ccc982d9.zip )
 "
