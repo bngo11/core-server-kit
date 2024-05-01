@@ -6,7 +6,7 @@ inherit toolchain-funcs
 
 DESCRIPTION="Efficient I/O with io_uring"
 HOMEPAGE="https://github.com/axboe/liburing"
-SRC_URI="https://git.kernel.dk/cgit/liburing/snapshot/liburing-2.5.tar.bz2 -> liburing-2.5.tar.bz2"
+SRC_URI="https://git.kernel.dk/cgit/liburing/snapshot/liburing-2.6.tar.bz2 -> liburing-2.6.tar.bz2"
 KEYWORDS="*"
 
 LICENSE="MIT"
