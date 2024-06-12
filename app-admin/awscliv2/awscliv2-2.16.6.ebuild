@@ -7,7 +7,7 @@ inherit distutils-r1
 
 DESCRIPTION=""
 HOMEPAGE="https://github.com/aws/aws-cli"
-SRC_URI="https://github.com/aws/aws-cli/tarball/6361a1e529847e40e8ea98538f24410add9d1607 -> aws-cli-2.16.4-6361a1e.tar.gz
+SRC_URI="https://github.com/aws/aws-cli/tarball/83fb579130a96a9fbc6b9345826d5f1042e87811 -> aws-cli-2.16.6-83fb579.tar.gz
 "
 
 DEPEND=""
