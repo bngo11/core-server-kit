@@ -315,7 +315,7 @@ EGO_SUM=(
 DESCRIPTION="A backup program that is fast, efficient and secure"
 HOMEPAGE="https://restic.github.io/"
 SRC_URI="https://github.com/restic/restic/tarball/9a9cc6dd0d978a8a452ff181558d5856dc217a37 -> restic-0.16.4-9a9cc6d.tar.gz
-https://direct.funtoo.org/8b/7e/a1/8b7ea18a7fce41ab135f8a85c30bf450dc0ac854148870dfdeeb8c64eef1b3d76680300d39d127a27f9057cfafd7d538ad5e4b2923d562a3cadc985eee4b23eb -> restic-0.16.4-funtoo-go-bundle-ae47dba26aafe7203e2127296462d8064105080fa26f8bc079932e59fc1665c6d55985d521393389d03ac6315a02137d97535e4567568a5dda577852b91a5774.tar.gz"
+https://direct.funtoo.org/e3/9c/05/e39c05981263a61235cfc98cd803379a57bdf24e28a2e4c60df70e92aec208b743afe0e28a37f23ffc28b9c64f4a7da030dc08c9085521fa2cb1f9dd8ac331cd -> restic-0.16.4-funtoo-go-bundle-ae47dba26aafe7203e2127296462d8064105080fa26f8bc079932e59fc1665c6d55985d521393389d03ac6315a02137d97535e4567568a5dda577852b91a5774.tar.gz"
 
 LICENSE="Apache-2.0 BSD BSD-2 LGPL-3-with-linking-exception MIT"
 SLOT="0"

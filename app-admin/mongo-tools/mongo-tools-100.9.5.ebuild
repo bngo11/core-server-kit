@@ -170,7 +170,7 @@ EGO_SUM=(
 go-module_set_globals
 
 SRC_URI="https://github.com/mongodb/mongo-tools/tarball/90481484c1783826fe26ca18bbdcd30e933f3b88 -> mongo-tools-100.9.5-9048148.tar.gz
-https://direct.funtoo.org/06/73/ee/0673ee06cbd7463802d8f2f78c78f9a330ffbb880913062ec98edd5277f1bb5399714f46dd27f7d3d22f08e58c124222fc0a9bda7b6d96e6c7e4a56d1cb0e9e9 -> mongo-tools-100.9.5-funtoo-go-bundle-59709876335349a9119f5037cdd3f90c3bf451ce465496997954ac42b6a692317f75fca17969a691234678578fd23bd6c0ebf85226cbd782ac4489fca480a60b.tar.gz"
+https://direct.funtoo.org/ef/f6/55/eff65565826ce4c1d54efd75756acf10af9c7ee8cfacca27a8655f3cb46d95ad90fdcb0b62413926416c826ede801610a4f9e31b95d01def1b516fa4ae009316 -> mongo-tools-100.9.5-funtoo-go-bundle-59709876335349a9119f5037cdd3f90c3bf451ce465496997954ac42b6a692317f75fca17969a691234678578fd23bd6c0ebf85226cbd782ac4489fca480a60b.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
