@@ -21,6 +21,7 @@ RESTRICT="test"
 RDEPEND="
 	!elibc_FreeBSD? ( dev-libs/libbsd )
 	>=sys-libs/talloc-2.3.1
+	>=dev-util/cmocka-1.1.3
 	python? (
 		${PYTHON_DEPS}
 		sys-libs/talloc[python,${PYTHON_USEDEP}]
