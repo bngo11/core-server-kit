@@ -4,23 +4,40 @@ EAPI=7
 
 PYTHON_COMPAT=( python3+ )
 PYTHON_REQ_USE="threads(+),xml(+)"
-inherit python-single-r1 waf-utils linux-info pam
+inherit python-single-r1 flag-o-matic waf-utils linux-info pam
 
 DESCRIPTION="Samba Suite Version 4"
 HOMEPAGE="https://samba.org/"
 
 MY_PV="${PV/_rc/rc}"
 MY_P="${PN}-${MY_PV}"
-SRC_URI="mirror://samba/stable/${MY_P}.tar.gz"
+SRC_URI=" https://www.samba.org/ftp/samba/samba-4.20.4.tar.gz -> samba-4.20.4.tar.gz "
 KEYWORDS="*"
 
 LICENSE="GPL-3"
 SLOT="0"
+IUSE="acl addc ads ceph client cluster cups debug fam glusterfs
+gpg iprint json ldap llvm-libunwind pam profiling-data python quota +regedit selinux
+snapper spotlight syslog system-heimdal +system-mitkrb5 test unwind winbind zeroconf"
 
-IUSE="acl addc addns ads ceph client cluster cups debug dmapi fam glusterfs
-gpg iprint json ldap ntvfs pam profiling-data python quota +regedit
-snapper spotlight syslog system-heimdal +system-mitkrb5 test winbind
-zeroconf"
+REQUIRED_USE="${PYTHON_REQUIRED_USE}
+	addc? ( json python !system-mitkrb5 winbind )
+	ads? ( acl ldap python winbind )
+	cluster? ( ads )
+	gpg? ( addc )
+	spotlight? ( json )
+	test? ( python )
+	!ads? ( !addc )
+	?? ( system-heimdal system-mitkrb5 )
+"
+
+# the test suite is messed, it uses system-installed samba
+# bits instead of what was built, tests things disabled via use
+# flags, and generally just fails to work in a way ebuilds could
+# rely on in its current state
+RESTRICT="test"
+
+S="${WORKDIR}/${MY_P}"
 
 COMMON_DEPEND="
 	>=app-arch/libarchive-3.1.2
@@ -33,30 +50,31 @@ COMMON_DEPEND="
 	>=net-libs/gnutls-3.4.7
 	net-libs/libnsl
 	sys-libs/e2fsprogs-libs
-	>=sys-libs/ldb-2.2.0[ldap(+)?]
-	<sys-libs/ldb-2.3.0[ldap(+)?]
+	>=sys-libs/ldb-2.7.2[ldap(+)?]
 	sys-libs/libcap
 	sys-libs/liburing
 	sys-libs/ncurses:0=
 	sys-libs/readline:0=
-	>=sys-libs/talloc-2.3.1
-	>=sys-libs/tdb-1.4.3
-	>=sys-libs/tevent-0.10.2
+	>=sys-libs/talloc-2.4.0
+	>=sys-libs/tdb-1.4.8
+	>=sys-libs/tevent-0.14.1
 	sys-libs/zlib
 	virtual/libiconv
-	acl? ( virtual/acl )
 	$(python_gen_cond_dep "
-		dev-python/subunit[\${PYTHON_USEDEP}]
-		addns? (
-			dev-python/dnspython:=[\${PYTHON_USEDEP}]
+		addc? (
+			dev-python/dnspython:=[${PYTHON_USEDEP}]
+			dev-python/markdown[${PYTHON_USEDEP}]
+		)
+		ads? (
+			dev-python/dnspython:=[${PYTHON_USEDEP}]
 			net-dns/bind-tools[gssapi]
 		)
 	")
+	acl? ( virtual/acl )
 	ceph? ( sys-cluster/ceph )
 	cluster? ( net-libs/rpcsvc-proto )
 	cups? ( net-print/cups )
 	debug? ( dev-util/lttng-ust )
-	dmapi? ( sys-apps/dmapi )
 	fam? ( virtual/fam )
 	gpg? ( app-crypt/gpgme )
 	json? ( dev-libs/jansson )
@@ -71,6 +89,10 @@ COMMON_DEPEND="
 	snapper? ( sys-apps/dbus )
 	system-heimdal? ( >=app-crypt/heimdal-1.5[-ssl] )
 	system-mitkrb5? ( >=app-crypt/mit-krb5-1.15.1 )
+	unwind? (
+		llvm-libunwind? ( sys-libs/llvm-libunwind:= )
+		!llvm-libunwind? ( sys-libs/libunwind:= )
+	)
 	zeroconf? ( net-dns/avahi[dbus] )
 "
 DEPEND="${COMMON_DEPEND}
@@ -82,6 +104,7 @@ DEPEND="${COMMON_DEPEND}
 	)
 	spotlight? ( dev-libs/glib )
 	test? (
+		$(python_gen_cond_dep "dev-python/subunit[\${PYTHON_USEDEP}]" )
 		!system-mitkrb5? (
 			>=net-dns/resolv_wrapper-1.1.4
 			>=net-libs/socket_wrapper-1.1.9
@@ -92,6 +115,7 @@ DEPEND="${COMMON_DEPEND}
 RDEPEND="${COMMON_DEPEND}
 	client? ( net-fs/cifs-utils[ads?] )
 	python? ( ${PYTHON_DEPS} )
+	selinux? ( sec-policy/selinux-samba )
 "
 BDEPEND="${PYTHON_DEPS}
 	app-text/docbook-xsl-stylesheets
@@ -99,30 +123,9 @@ BDEPEND="${PYTHON_DEPS}
 	virtual/pkgconfig
 "
 
-REQUIRED_USE="
-	addc? ( python json winbind )
-	addns? ( python )
-	ads? ( acl ldap winbind )
-	cluster? ( ads )
-	gpg? ( addc )
-	ntvfs? ( addc )
-	spotlight? ( json )
-	test? ( python )
-	!ads? ( !addc )
-	?? ( system-heimdal system-mitkrb5 )
-	${PYTHON_REQUIRED_USE}
-"
-
-# the test suite is messed, it uses system-installed samba
-# bits instead of what was built, tests things disabled via use
-# flags, and generally just fails to work in a way ebuilds could
-# rely on in its current state
-RESTRICT="test"
-
-S="${WORKDIR}/${MY_P}"
-
 PATCHES=(
-	"${FILESDIR}/${PN}-4.4.0-pam.patch"
+	"${FILESDIR}/${PN}-4.18.4-pam.patch"
+	"${FILESDIR}/ldb-2.5.2-skip-wav-tevent-check.patch"
 )
 
 CONFDIR="${FILESDIR}/4.13"
@@ -134,6 +137,7 @@ SHAREDMODS=""
 pkg_setup() {
 	# Package fails to build with distcc
 	export DISTCC_DISABLE=1
+	export PYTHONHASHSEED=1
 
 	python-single-r1_pkg_setup
 
@@ -172,6 +176,32 @@ src_configure() {
 		bundled_libs="heimbase,heimntlm,hdb,kdc,krb5,wind,gssapi,hcrypto,hx509,roken,asn1,com_err,NONE"
 	fi
 
+	# We "use" bundled cmocka when we're not running tests as we're
+	# not using it anyway. Means we avoid making users install it for
+	# no reason. bug #802531
+	if ! use test ; then
+		bundled_libs="cmocka,${bundled_libs}"
+	fi
+
+	# bug #874633
+	if use llvm-libunwind ; then
+		mkdir -p "${T}"/${ABI}/pkgconfig || die
+
+		local -x PKG_CONFIG_PATH="${T}/${ABI}/pkgconfig:${PKG_CONFIG_PATH}"
+
+		cat <<-EOF > "${T}"/${ABI}/pkgconfig/libunwind-generic.pc || die
+		exec_prefix=\${prefix}
+		libdir=/usr/$(get_libdir)
+		includedir=\${prefix}/include
+
+		Name: libunwind-generic
+		Description: libunwind generic library
+		Version: 1.70
+		Libs: -L\${libdir} -lunwind
+		Cflags: -I\${includedir}
+		EOF
+	fi
+
 	local myconf=(
 		--enable-fhs
 		--sysconfdir="${EPREFIX}/etc"
@@ -187,24 +217,24 @@ src_configure() {
 		--without-winexe
 		$(use_with acl acl-support)
 		$(usex addc '' '--without-ad-dc')
-		$(use_with addns dnsupdate)
 		$(use_with ads)
 		$(use_enable ceph cephfs)
 		$(use_with cluster cluster-support)
 		$(use_enable cups)
-		$(use_with dmapi)
+		--without-dmapi
 		$(use_with fam)
 		$(use_enable glusterfs)
 		$(use_with gpg gpgme)
 		$(use_with json)
 		$(use_enable iprint)
-		$(use_with ntvfs ntvfs-fileserver)
 		$(use_with pam)
 		$(usex pam "--with-pammodulesdir=${EPREFIX}/$(get_libdir)/security" '')
 		$(use_with quota quotas)
 		$(use_with regedit)
 		$(use_enable spotlight)
 		$(use_with syslog)
+		--without-systemd
+		$(use_with unwind libunwind)
 		$(use_with winbind)
 		$(usex python '' '--disable-python')
 		$(use_enable zeroconf avahi)
@@ -231,6 +261,11 @@ src_install() {
 
 	# Make all .so files executable
 	find "${ED}" -type f -name "*.so" -exec chmod +x {} + || die
+	# smbspool_krb5_wrapper must only be accessible to root, bug #880739
+	find "${ED}" -type f -name "smbspool_krb5_wrapper" -exec chmod go-rwx {} + || die
+
+	# Remove empty runtime dirs created by build system (bug #892341)
+	find "${ED}"/{run,var} -type d -empty -delete || die
 
 	# install ldap schema for server (bug #491002)
 	if use ldap ; then

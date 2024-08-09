@@ -9,11 +9,11 @@ async def generate(hub, **pkginfo):
 	for item in json_data:
 		try:
 			name = item['name']
-			if name.startswith('ldb'):
+			if name.startswith('samba'):
 				version = name.split('-')[-1]
 				ver = version.split(".")
 				list(map(int, ver))
-				if int(ver[-1]) < 90:
+				if int(ver[-1]) < 90 and int(ver[1]) % 2 == 0:
 					break
 
 		except (IndexError, ValueError, KeyError):
@@ -23,7 +23,7 @@ async def generate(hub, **pkginfo):
 
 	if version:
 		final_name = f"{name}.tar.gz"
-		url = f"https://www.samba.org/ftp/ldb/{final_name}"
+		url = f"https://www.samba.org/ftp/samba/{final_name}"
 		ebuild = hub.pkgtools.ebuild.BreezyBuild(
 			**pkginfo,
 			version=version,
