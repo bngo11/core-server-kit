@@ -24,9 +24,9 @@ RDEPEND="
 	!elibc_FreeBSD? ( dev-libs/libbsd )
 	dev-libs/popt
 	>=dev-util/cmocka-1.1.3
-	>=sys-libs/talloc-2.3.1
-	>=sys-libs/tdb-1.4.3
-	>=sys-libs/tevent-0.10.2
+	>=sys-libs/talloc-2.4.2
+	>=sys-libs/tdb-1.4.10
+	>=sys-libs/tevent-0.16.1
 	ldap? ( net-nds/openldap )
 	lmdb? ( >=dev-db/lmdb-0.9.16 )
 	python? (
