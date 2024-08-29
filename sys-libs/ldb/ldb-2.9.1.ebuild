@@ -4,6 +4,7 @@ EAPI=7
 
 PYTHON_COMPAT=( python3+ )
 PYTHON_REQ_USE="threads(+)"
+DISTUTILS_USE_PEP517=setuptools
 inherit python-single-r1 waf-utils
 
 DESCRIPTION="LDAP-like embedded database"

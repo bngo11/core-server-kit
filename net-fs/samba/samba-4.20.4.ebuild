@@ -4,6 +4,7 @@ EAPI=7
 
 PYTHON_COMPAT=( python3+ )
 PYTHON_REQ_USE="threads(+),xml(+)"
+DISTUTILS_USE_PEP517=setuptools
 inherit python-single-r1 flag-o-matic waf-utils linux-info pam
 
 DESCRIPTION="Samba Suite Version 4"
