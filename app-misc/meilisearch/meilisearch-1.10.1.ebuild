@@ -7,8 +7,8 @@ inherit cargo user
 DESCRIPTION="A lightning-fast search engine that fits effortlessly into your apps, websites, and workflow"
 HOMEPAGE="https://www.meilisearch.com/"
 SRC_URI="
-	https://github.com/meilisearch/meilisearch/tarball/36d8684dc8882cf611a2dc2d5724f8712fae26ec -> meilisearch-1.10.0-36d8684.tar.gz
-	https://direct.funtoo.org/67/55/1f/67551f1f9901c66eea3b554cd766c6d7834b17c4e406287345158e59979d9c161fca4b1f341ee3c4b05c823540f3a534ee07a1fc72cf18eb46204850fed4e097 -> meilisearch-1.10.0-funtoo-crates-bundle-ec12b579b03d7828e3d27c7f651f076a4baeb6e4a6af9acce746f41678231f97442c7b808a5d7772ac10b0125bc5b64a5d19a0e14f83567c29e89f3d01eeb793.tar.gz
+	https://github.com/meilisearch/meilisearch/tarball/3f517dfae6e72159666bca535ab24a8f00ea6ee3 -> meilisearch-1.10.1-3f517df.tar.gz
+	https://direct.funtoo.org/55/83/a0/5583a057eae601c68412fc833374e6c5f1356294ea57cd3afb08c343e3f873e22959d970b60f360ff80a532c496c5ceaadc61ff45ca4be7321eddefb70119723 -> meilisearch-1.10.1-funtoo-crates-bundle-ec12b579b03d7828e3d27c7f651f076a4baeb6e4a6af9acce746f41678231f97442c7b808a5d7772ac10b0125bc5b64a5d19a0e14f83567c29e89f3d01eeb793.tar.gz
 	https://dotsrc.dl.osdn.net/osdn/unidic/58338/unidic-mecab-2.1.2_src.zip -> unidic-mecab-2.1.2_src.zip
 	mini-dashboard? ( https://github.com/meilisearch/mini-dashboard/releases/download/v0.2.14/build.zip -> meilisearch-mini-dashboard-592d1b5a3459d621d0aae1dded8fe3154f5c38fe.zip )
 "
@@ -24,7 +24,7 @@ BDEPEND="
 	virtual/rust
 "
 
-S="${WORKDIR}/meilisearch-meilisearch-36d8684"
+S="${WORKDIR}/meilisearch-meilisearch-3f517df"
 
 MEILI_DATA_DIR="/var/lib/${PN}"
 
@@ -65,7 +65,7 @@ src_configure() {
 }
 
 src_compile() {
-	export VERGEN_GIT_SHA="36d8684dc8882cf611a2dc2d5724f8712fae26ec"
+	export VERGEN_GIT_SHA="3f517dfae6e72159666bca535ab24a8f00ea6ee3"
 	export VERGEN_GIT_SEMVER_LIGHTWEIGHT="${PV}"
 
 	cargo build --release -p meilisearch \
