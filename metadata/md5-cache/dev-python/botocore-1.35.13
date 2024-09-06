@@ -1,0 +1,15 @@
+BDEPEND=python_targets_python3_12? ( dev-lang/python:3.12 ) python_targets_python3_10? ( dev-lang/python:3.10 ) python_targets_python3_9? ( dev-lang/python:3.9 ) >=dev-lang/python-exec-2:=[python_targets_python3_12(-)?,python_targets_python3_10(-)?,python_targets_python3_9(-)?,-python_single_target_python3_12(-),-python_single_target_python3_10(-),-python_single_target_python3_9(-)] >=dev-python/setuptools-42.0.2[python_targets_python3_12(-)?,python_targets_python3_10(-)?,python_targets_python3_9(-)?,-python_single_target_python3_12(-),-python_single_target_python3_10(-),-python_single_target_python3_9(-)]
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=dev-python/tomli[python_targets_python3_12(-)?,python_targets_python3_10(-)?,python_targets_python3_9(-)?,-python_single_target_python3_12(-),-python_single_target_python3_10(-),-python_single_target_python3_9(-)]
+DESCRIPTION=Low-level, data-driven core of boto 3.
+EAPI=7
+HOMEPAGE=https://github.com/boto/botocore https://pypi.org/project/botocore/
+IUSE=python_targets_python3_12 python_targets_python3_10 python_targets_python3_9
+KEYWORDS=*
+LICENSE=Apache-2.0
+RDEPEND=dev-python/jmespath[python_targets_python3_12(-)?,python_targets_python3_10(-)?,python_targets_python3_9(-)?,-python_single_target_python3_12(-),-python_single_target_python3_10(-),-python_single_target_python3_9(-)] dev-python/python-dateutil[python_targets_python3_12(-)?,python_targets_python3_10(-)?,python_targets_python3_9(-)?,-python_single_target_python3_12(-),-python_single_target_python3_10(-),-python_single_target_python3_9(-)] dev-python/urllib3[python_targets_python3_12(-)?,python_targets_python3_10(-)?,python_targets_python3_9(-)?,-python_single_target_python3_12(-),-python_single_target_python3_10(-),-python_single_target_python3_9(-)] python_targets_python3_12? ( dev-lang/python:3.12 ) python_targets_python3_10? ( dev-lang/python:3.10 ) python_targets_python3_9? ( dev-lang/python:3.9 ) >=dev-lang/python-exec-2:=[python_targets_python3_12(-)?,python_targets_python3_10(-)?,python_targets_python3_9(-)?,-python_single_target_python3_12(-),-python_single_target_python3_10(-),-python_single_target_python3_9(-)]
+REQUIRED_USE=|| ( python_targets_python3_12 python_targets_python3_10 python_targets_python3_9 )
+SLOT=0
+SRC_URI=https://files.pythonhosted.org/packages/98/22/a85f8aa062b9310c1c62c63bbaa0644bf2cb8fd84328226580af0b61ffd4/botocore-1.35.13.tar.gz -> botocore-1.35.13.tar.gz
+_eclasses_=distutils-r1	c9049c1699490b5819f9d1823c1f855f	eapi8-dosym	cd7d420bb5be5ee079f27239ce76b8f5	multibuild	b2c915190b051f55a23b9354b9849847	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	python-r1	5bbb250a8d0b8f4496dcef8e8c1c1a8a	python-utils-r1	b92baa7cc511b39f3feee26f8df963d7	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=70bbc7cef3ca173c95b3f984bc979965
