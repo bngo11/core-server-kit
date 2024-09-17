@@ -12,7 +12,7 @@ HOMEPAGE="https://samba.org/"
 
 MY_PV="${PV/_rc/rc}"
 MY_P="${PN}-${MY_PV}"
-SRC_URI=" https://www.samba.org/ftp/samba/samba-4.20.4.tar.gz -> samba-4.20.4.tar.gz "
+SRC_URI=" https://www.samba.org/ftp/samba/samba-4.20.5.tar.gz -> samba-4.20.5.tar.gz "
 KEYWORDS="*"
 
 LICENSE="GPL-3"
