@@ -364,7 +364,7 @@ EGO_SUM=(
 DESCRIPTION="A backup program that is fast, efficient and secure"
 HOMEPAGE="https://restic.github.io/"
 SRC_URI="https://github.com/restic/restic/tarball/037c0e4c204cae3e3b748a9835c8dfd5a54d0e2e -> restic-0.17.1-037c0e4.tar.gz
-https://direct.funtoo.org/62/61/d1/6261d1bc1eaa566fc4ba71845ca50c6a98633fa81ede375ccd6a17b7c8a6015ea8c41a693da353ec7aa819a04064ad5cb05a68c58eb1333f0a162519aae643ee -> restic-0.17.1-funtoo-go-bundle-dabbce6487c9ea6d9ccb13b297b4273d713b23388571f8bb222155f21674e4df1c9b1dfd084b8f9617f8018fdacf1ec9d2e50108d09f691247f1d94a6bbd1caa.tar.gz"
+https://direct.funtoo.org/37/c2/fa/37c2fa750e0ac2361494e346dc07048c99446db4f457bfaa7d5e79111660abd28376dfaa1c0c0bae3608a020667386feffe91ef82fa01d154bd2adbb825c9a77 -> restic-0.17.1-funtoo-go-bundle-dabbce6487c9ea6d9ccb13b297b4273d713b23388571f8bb222155f21674e4df1c9b1dfd084b8f9617f8018fdacf1ec9d2e50108d09f691247f1d94a6bbd1caa.tar.gz"
 
 LICENSE="Apache-2.0 BSD BSD-2 LGPL-3-with-linking-exception MIT"
 SLOT="0"
