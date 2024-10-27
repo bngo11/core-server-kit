@@ -1,33 +1,37 @@
 #!/usr/bin/env python3
 
-import json
+from bs4 import BeautifulSoup
 
 async def generate(hub, **pkginfo):
-	json_data = await hub.pkgtools.fetch.get_page("https://gitlab.com/api/v4/projects/3456094/repository/tags?per_page=50", is_json=True)
+	base_url = "https://download.samba.org/pub/talloc"
+	html_data = await hub.pkgtools.fetch.get_page(base_url)
+	soup = BeautifulSoup(html_data, "html.parser")
+	links = soup.find_all("a")
+	links.reverse()
 	version = None
 
-	for item in json_data:
-		try:
-			name = item['name']
-			if name.startswith('talloc'):
-				version = name.split('-')[-1]
-				ver = version.split(".")
-				list(map(int, ver))
-				if int(ver[-1]) < 90:
-					break
+	for link in links:
+		href = link.get("href")
+		if href.endswith('tar.gz'):
+			version = href.split('-')[-1].rsplit('.', 2)[0]
 
-		except (IndexError, ValueError, KeyError):
-			continue
-	else:
-		version = None
+			try:
+				list(map(int, version.split(".")))
+				break
+
+			except ValueError:
+				continue
 
 	if version:
-		final_name = f"{name}.tar.gz"
-		url = f"https://www.samba.org/ftp/talloc/{final_name}"
+		final_name = f"talloc-{version}.tar.gz"
+		url = f"{base_url}/talloc-{version}.tar.gz"
 		ebuild = hub.pkgtools.ebuild.BreezyBuild(
 			**pkginfo,
 			version=version,
-			artifacts=[hub.pkgtools.ebuild.Artifact(url=url, final_name=final_name)]
+			artifacts=[hub.pkgtools.ebuild.Artifact(url=url, final_name=final_name)],
 		)
+
 		ebuild.push()
+
+
 # vim: ts=4 sw=4 noet
