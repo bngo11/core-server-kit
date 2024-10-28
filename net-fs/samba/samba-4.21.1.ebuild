@@ -51,7 +51,7 @@ COMMON_DEPEND="
 	>=net-libs/gnutls-3.4.7
 	net-libs/libnsl
 	sys-libs/e2fsprogs-libs
-	>=sys-libs/ldb-2.7.2[ldap(+)?]
+	!sys-libs/ldb
 	sys-libs/libcap
 	sys-libs/liburing
 	sys-libs/ncurses:0=
@@ -82,7 +82,6 @@ COMMON_DEPEND="
 	ldap? ( net-nds/openldap )
 	pam? ( sys-libs/pam )
 	python? (
-		sys-libs/ldb[python,${PYTHON_USEDEP}]
 		sys-libs/talloc[python,${PYTHON_USEDEP}]
 		sys-libs/tdb[python,${PYTHON_USEDEP}]
 		sys-libs/tevent[python,${PYTHON_USEDEP}]
@@ -244,6 +243,7 @@ src_configure() {
 		$(use_with debug lttng)
 		$(use_with ldap)
 		$(use_with profiling-data)
+		--private-libraries='!ldb'
 		--with-shared-modules=${SHAREDMODS}
 		# bug #683148
 		--jobs 1
