@@ -37,7 +37,7 @@ async def generate(hub, **pkginfo):
 		hub, pkginfo, cargo_lock_path=cargo_lock_path
 	)
 
-	meili_package_path = os.path.join(src_path, "meilisearch", "Cargo.toml")
+	meili_package_path = os.path.join(src_path, "crates", "meilisearch", "Cargo.toml")
 	with open(meili_package_path, "r") as meili_package_file:
 		meili_package_data = toml.load(meili_package_file)
 
