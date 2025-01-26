@@ -179,14 +179,14 @@ EGO_SUM=(
 
 go-module_set_globals
 
-SRC_URI="https://github.com/mongodb/mongo-tools/tarball/0908c159c39fbdce9d515a2f6a905a259bc7ce39 -> mongo-tools-100.11.0-0908c15.tar.gz
+SRC_URI="https://github.com/mongodb/mongo-tools/tarball/2629824afd2fdc5c51e4fc65db36c608fe16db84 -> mongo-tools-100.11.0-2629824.tar.gz
 https://direct.funtoo.org/81/6b/a1/816ba170d337a17ac276f4d342641c63477f60a65583e73d7c6b72a80fe892a710e5dd1b5ab58dc1f22aaa68ac883f253072c51e7a7cb58cae4ab739c04e89d6 -> mongo-tools-100.11.0-funtoo-go-bundle-19fa42f92705f8213008bc240a7a217b4f2cbeebfe843fae30886656446b686084b0fc80b8d32c61d2f3267486f2f816b158186d0a2ca2e6eee54931f67dd55b.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="*"
 IUSE="sasl ssl"
-S="${WORKDIR}/mongodb-mongo-tools-0908c15"
+S="${WORKDIR}/mongodb-mongo-tools-2629824"
 
 RDEPEND="
 	net-libs/libpcap
