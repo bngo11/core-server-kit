@@ -20,8 +20,9 @@ async def generate(hub, **pkginfo):
 			continue
 
 	if version:
-		final_name=f"{name}.tar.bz2"
-		url=f"https://git.kernel.dk/cgit/liburing/snapshot/{final_name}"
+		final_name=f"{name}.tar.gz"
+		# url=f"https://git.kernel.dk/cgit/liburing/snapshot/{final_name}"
+		url=f"https://github.com/axboe/liburing/archive/refs/tags/{final_name}"
 		ebuild = hub.pkgtools.ebuild.BreezyBuild(
 			**pkginfo,
 			version=version,

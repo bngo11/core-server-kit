@@ -16,6 +16,12 @@ IUSE="static-libs"
 # fsync test hangs forever
 RESTRICT="test"
 
+post_src_unpack() {
+	if [ ! -d "${S}" ]; then
+		mv "${WORKDIR}"/liburing-liburing* "${S}" || die
+	fi
+}
+
 src_prepare() {
 	default
 }

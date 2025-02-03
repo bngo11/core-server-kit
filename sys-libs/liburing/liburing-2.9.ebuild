@@ -6,7 +6,7 @@ inherit toolchain-funcs
 
 DESCRIPTION="Efficient I/O with io_uring"
 HOMEPAGE="https://github.com/axboe/liburing"
-SRC_URI="https://git.kernel.dk/cgit/liburing/snapshot/liburing-2.8.tar.bz2 -> liburing-2.8.tar.bz2"
+SRC_URI="https://github.com/axboe/liburing/archive/refs/tags/liburing-2.9.tar.gz -> liburing-2.9.tar.gz"
 KEYWORDS="*"
 
 LICENSE="MIT"
@@ -15,6 +15,12 @@ SLOT="0" # liburing.so version
 IUSE="static-libs"
 # fsync test hangs forever
 RESTRICT="test"
+
+post_src_unpack() {
+	if [ ! -d "${S}" ]; then
+		mv "${WORKDIR}"/liburing-liburing* "${S}" || die
+	fi
+}
 
 src_prepare() {
 	default
