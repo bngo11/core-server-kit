@@ -2,7 +2,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=(  )
 
 inherit python-any-r1
 
