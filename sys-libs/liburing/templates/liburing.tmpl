@@ -16,6 +16,8 @@ IUSE="static-libs"
 # fsync test hangs forever
 RESTRICT="test"
 
+PATCHES=( "${FILESDIR}/liburing-2.10-compilation-error.patch")
+
 post_src_unpack() {
 	if [ ! -d "${S}" ]; then
 		mv "${WORKDIR}"/liburing-liburing* "${S}" || die

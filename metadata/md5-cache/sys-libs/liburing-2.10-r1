@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile configure prepare test
+DESCRIPTION=Efficient I/O with io_uring
+EAPI=7
+HOMEPAGE=https://github.com/axboe/liburing
+IUSE=static-libs
+KEYWORDS=*
+LICENSE=MIT
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/axboe/liburing/archive/refs/tags/liburing-2.10.tar.gz -> liburing-2.10.tar.gz
+_eclasses_=multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=e1bf4cd39a00b5f023a557507df81ff3
