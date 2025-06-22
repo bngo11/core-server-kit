@@ -20,16 +20,12 @@ async def generate(hub, **pkginfo):
 			continue
 
 	if version:
-		revision = 0
-		if version == '2.10':
-			revision=1
 		final_name=f"{name}.tar.gz"
 		# url=f"https://git.kernel.dk/cgit/liburing/snapshot/{final_name}"
 		url=f"https://github.com/axboe/liburing/archive/refs/tags/{final_name}"
 		ebuild = hub.pkgtools.ebuild.BreezyBuild(
 			**pkginfo,
 			version=version,
-			revision=revision,
 			artifacts=[hub.pkgtools.ebuild.Artifact(url=url, final_name=final_name)]
 		)
 		ebuild.push()

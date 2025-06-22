@@ -9,4 +9,4 @@ RESTRICT=test
 SLOT=0
 SRC_URI=https://github.com/axboe/liburing/archive/refs/tags/liburing-2.11.tar.gz -> liburing-2.11.tar.gz
 _eclasses_=multilib	d410501a125f99ffb560b0c523cd3d1e	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
-_md5_=82686bd5f117ef82d94c7cd91fed47f9
+_md5_=f9c704ba0af4a0b2ce7d15ac01003433
