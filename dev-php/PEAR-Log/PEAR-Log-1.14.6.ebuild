@@ -7,7 +7,7 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="The Log framework provides an abstracted logging system"
 HOMEPAGE="http://pear.php.net/package/${MY_PN}"
-SRC_URI="https://github.com/pear/Log/tarball/38e6668ead984d446161acc1ba257cf77ec67bcd -> Log-1.14.5-38e6668.tar.gz"
+SRC_URI="https://github.com/pear/Log/tarball/e136d31ff6d5991e9707862f5fbfb97d40cd37a3 -> Log-1.14.6-e136d31.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="*"
