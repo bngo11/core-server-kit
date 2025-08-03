@@ -13,7 +13,7 @@ inherit php-ext-pecl-r3
 
 KEYWORDS="*"
 
-SRC_URI="https://github.com/krakjoe/apcu/tarball/62e67989a35247263c370b5ecebb4e69b73b0709 -> apcu-5.1.24-62e6798.tar.gz"
+SRC_URI="https://github.com/krakjoe/apcu/tarball/616c72d58cfc2a7ffce7512f9ae91e49d2d06ab9 -> apcu-5.1.25-616c72d.tar.gz"
 
 DESCRIPTION="Stripped down version of APC supporting only user cache"
 LICENSE="PHP-3.01"
