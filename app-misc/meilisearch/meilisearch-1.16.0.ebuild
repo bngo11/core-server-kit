@@ -7,10 +7,10 @@ inherit cargo user
 DESCRIPTION="A lightning-fast search engine that fits effortlessly into your apps, websites, and workflow"
 HOMEPAGE="https://www.meilisearch.com/"
 SRC_URI="
-	https://github.com/meilisearch/meilisearch/tarball/6b4d69996ce9c1e0d0b8d52af2fcea4a5750bfa7 -> meilisearch-1.15.2-6b4d699.tar.gz
-	https://direct.funtoo.org/35/92/d5/3592d58d0ef172019b01a1e453338702173752c4420b575d33573f43eb63cfb219d22ae4ae83e6634d1e51a1eb726332fc0303d194197bbc5aebcd71d93c3936 -> meilisearch-1.15.2-funtoo-crates-bundle-cabb68e2e10649c2a05accaaea6a80e5384165f7356992d0a5918f97579718b8f8c200e73f21ac766c375fc7e1fcd8e9dc148a963cf0ff0d85189c42e46f4244.tar.gz
+	https://github.com/meilisearch/meilisearch/tarball/a2c96d40d313cb7a143a93ad5f2fb52b5eaafe47 -> meilisearch-1.16.0-a2c96d4.tar.gz
+	https://direct.funtoo.org/6a/af/19/6aaf19b565666d1e03c3e13c6bb3f469a78f8f6336182edb3625a2c203aa1c044147d8aa135c6b63c59e996711c4414b07ad06838f3a2562a2d4f21011cad5d7 -> meilisearch-1.16.0-funtoo-crates-bundle-8285b8d1ecde85257f5f04fb1b2b9915bd9a3ca1e7fb5e60cd1e5bd8f4b472aa27a83b4d731bb4d322418135a83619f3e77889a48a25d363eab54844eb3c5e0d.tar.gz
 	https://dotsrc.dl.osdn.net/osdn/unidic/58338/unidic-mecab-2.1.2_src.zip -> unidic-mecab-2.1.2_src.zip
-	mini-dashboard? ( https://github.com/meilisearch/mini-dashboard/releases/download/v0.2.19/build.zip -> meilisearch-mini-dashboard-7974430d5277c97f67cf6e95eec6faaac2788834.zip )
+	mini-dashboard? ( https://github.com/meilisearch/mini-dashboard/releases/download/v0.2.22/build.zip -> meilisearch-mini-dashboard-b70b2036b5f167da9ea0b637da8b320c7ea88254.zip )
 "
 
 LICENSE="MIT"
@@ -24,7 +24,7 @@ BDEPEND="
 	virtual/rust
 "
 
-S="${WORKDIR}/meilisearch-meilisearch-6b4d699"
+S="${WORKDIR}/meilisearch-meilisearch-a2c96d4"
 
 MEILI_DATA_DIR="/var/lib/${PN}"
 
@@ -47,7 +47,7 @@ src_prepare() {
 
 	if use mini-dashboard; then
 		# Inject path to downloaded mini-dashboard build
-		sed -i "s|https://github.com/meilisearch/mini-dashboard/releases/download/v0.2.19/build.zip|${DISTDIR}/meilisearch-mini-dashboard-7974430d5277c97f67cf6e95eec6faaac2788834.zip|g" "${S}"/meilisearch/Cargo.toml
+		sed -i "s|https://github.com/meilisearch/mini-dashboard/releases/download/v0.2.22/build.zip|${DISTDIR}/meilisearch-mini-dashboard-b70b2036b5f167da9ea0b637da8b320c7ea88254.zip|g" "${S}"/meilisearch/Cargo.toml
 
 		# Replace HTTP fetch with direct file read
 		sed -i -r 's|(let dashboard_assets_bytes =)(.*)$|\1 std::fs::read(url)?;|' "${S}"/meilisearch/build.rs
@@ -65,7 +65,7 @@ src_configure() {
 }
 
 src_compile() {
-	export VERGEN_GIT_SHA="6b4d69996ce9c1e0d0b8d52af2fcea4a5750bfa7"
+	export VERGEN_GIT_SHA="a2c96d40d313cb7a143a93ad5f2fb52b5eaafe47"
 	export VERGEN_GIT_SEMVER_LIGHTWEIGHT="${PV}"
 
 	cargo build --release -p meilisearch \

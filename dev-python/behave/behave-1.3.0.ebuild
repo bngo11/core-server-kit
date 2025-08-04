@@ -6,8 +6,8 @@ PYTHON_COMPAT=( python3+ )
 inherit distutils-r1
 
 DESCRIPTION="behave is behaviour-driven development, Python style"
-HOMEPAGE="http://github.com/behave/behave https://pypi.org/project/behave/"
-SRC_URI="https://files.pythonhosted.org/packages/c8/4b/d0a8c23b6c8985e5544ea96d27105a273ea22051317f850c2cdbf2029fe4/behave-1.2.6.tar.gz -> behave-1.2.6.tar.gz"
+HOMEPAGE="None https://pypi.org/project/behave/"
+SRC_URI="https://files.pythonhosted.org/packages/76/19/774284df603139d2dda55c9901c45c4c08c84847371cc1444b1c0a5f12b7/behave-1.3.0.tar.gz -> behave-1.3.0.tar.gz"
 
 DEPEND=""
 RDEPEND="
@@ -20,4 +20,4 @@ IUSE=""
 SLOT="0"
 LICENSE="BSD"
 KEYWORDS="*"
-S="${WORKDIR}/behave-1.2.6"
+S="${WORKDIR}/behave-1.3.0"
