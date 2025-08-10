@@ -8,7 +8,7 @@ inherit waf-utils python-single-r1
 
 DESCRIPTION="Simple database API"
 HOMEPAGE="https://tdb.samba.org/"
-SRC_URI="https://download.samba.org/pub/tdb/tdb-1.4.13.tar.gz -> tdb-1.4.13.tar.gz"
+SRC_URI="https://download.samba.org/pub/tdb/tdb-1.4.14.tar.gz -> tdb-1.4.14.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"

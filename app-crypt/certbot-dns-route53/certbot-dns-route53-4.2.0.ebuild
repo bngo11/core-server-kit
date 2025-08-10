@@ -4,12 +4,12 @@
 EAPI=7
 PYTHON_COMPAT=( python3+ )
 
-SRC_URI="https://files.pythonhosted.org/packages/bc/90/7c4d369387098fe2ce374d097b68e6c98ab9ac7f3e493896dcfa1769aeed/certbot_dns_rfc2136-4.1.1.tar.gz -> certbot_dns_rfc2136-4.1.1.tar.gz"
+SRC_URI="https://files.pythonhosted.org/packages/e1/0f/51d97350fdcd74d59a4681a4f27ff4517c47634a08a5c679006da1a6eb20/certbot_dns_route53-4.2.0.tar.gz -> certbot_dns_route53-4.2.0.tar.gz"
 KEYWORDS="*"
 
 inherit distutils-r1
 
-DESCRIPTION="RFC 2136 DNS Authenticator plugin for Certbot"
+DESCRIPTION="Route53 plugin for certbot"
 HOMEPAGE="https://github.com/certbot/certbot https://letsencrypt.org/"
 
 LICENSE="Apache-2.0"
@@ -22,5 +22,5 @@ RDEPEND="${CDEPEND}
 	>=dev-python/acme-0.29.0[${PYTHON_USEDEP}]
 	dev-python/mock[${PYTHON_USEDEP}]
 	dev-python/zope-interface[${PYTHON_USEDEP}]
-	dev-python/dnspython[${PYTHON_USEDEP}]"
+	dev-python/boto3[${PYTHON_USEDEP}]"
 DEPEND="${CDEPEND}"
