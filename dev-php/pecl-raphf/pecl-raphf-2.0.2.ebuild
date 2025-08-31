@@ -14,7 +14,7 @@ inherit php-ext-pecl-r3
 
 KEYWORDS="*"
 
-SRC_URI="https://github.com/m6w6/ext-raphf/tarball/f52e2bcd62aa733f00454bb61933b83443d3e7cb -> ext-raphf-2.0.1-f52e2bc.tar.gz"
+SRC_URI="https://github.com/m6w6/ext-raphf/tarball/5836579db73ac959b9f743e09d8763c41c7cfcef -> ext-raphf-2.0.2-5836579.tar.gz"
 
 DESCRIPTION="A reusable, persistent handle and resource factory API"
 LICENSE="BSD-2"
