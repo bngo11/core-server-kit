@@ -27,6 +27,8 @@ async def generate(hub, **pkginfo):
 		ebuild = hub.pkgtools.ebuild.BreezyBuild(
 			**pkginfo,
 			version=version,
+			python_compat="python3+ pypy3",
+			unmasked=True,
 			github_user=github_user,
 			github_repo=github_repo,
 			artifacts=[hub.pkgtools.ebuild.Artifact(url=url, final_name=final_name)]

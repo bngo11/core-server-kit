@@ -2,7 +2,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=(  )
+PYTHON_COMPAT=( python3+ pypy3 )
 
 inherit python-any-r1
 
@@ -12,7 +12,7 @@ SRC_URI="https://api.github.com/repos/nodejs/node/tarball/v24.8.0 -> nodejs-24.8
 
 LICENSE="Apache-1.1 Apache-2.0 BSD BSD-2 MIT"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="*"
 IUSE=""
 
 DEPEND=""
