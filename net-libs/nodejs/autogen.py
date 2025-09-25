@@ -8,6 +8,7 @@ async def generate(hub, **pkginfo):
 	json_data = await hub.pkgtools.fetch.get_page(f"https://api.github.com/repos/{github_user}/{github_repo}/releases", is_json=True)
 	version = None
 	url = None
+	basever = 24
 
 	for item in json_data:
 		try:
@@ -15,7 +16,9 @@ async def generate(hub, **pkginfo):
 				continue
 
 			version = item["tag_name"].lstrip("v")
-			list(map(int, version.split(".")))
+			verlist = list(map(int, version.split(".")))
+			if basever and basever != verlist[0]:
+				continue
 			url = item["tarball_url"]
 			break
 
