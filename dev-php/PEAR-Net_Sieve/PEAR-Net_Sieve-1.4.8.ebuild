@@ -6,7 +6,7 @@ MY_PN="${PN/PEAR-/}"
 
 DESCRIPTION="An API for talking to sieve (RFC 3028) servers"
 HOMEPAGE="https://github.com/roundcube/${MY_PN}"
-SRC_URI="https://github.com/pear/Net_Sieve/tarball/31b3ef38d75e681d5589c5ed2267314b79c1dfe8 -> Net_Sieve-1.4.7-31b3ef3.tar.gz"
+SRC_URI="https://github.com/pear/Net_Sieve/tarball/345eb171c0b377e4f9f6fe9c6e532a76dfe2d754 -> Net_Sieve-1.4.8-345eb17.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
