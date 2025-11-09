@@ -6,9 +6,9 @@ PYTHON_COMPAT=( pypy3 python3+ )
 DISTUTILS_USE_PEP517="setuptools"
 inherit distutils-r1
 
-DESCRIPTION="Model-driven deployment, config management, and command execution framework"
-HOMEPAGE="https://ansible.com/"
-SRC_URI="https://files.pythonhosted.org/packages/aa/20/036f20185b8a65de24b0759efa8666577804f42b31beccb96309c67aa6d4/ansible_core-2.19.3.tar.gz -> ansible_core-2.19.3.tar.gz"
+DESCRIPTION="Radically simple IT automation"
+HOMEPAGE="https://ansible.com/ https://pypi.org/project/ansible/"
+SRC_URI="https://files.pythonhosted.org/packages/00/1e/154896819d41cb9a5266759244285c7b594a199e2543263764a022b86618/ansible-12.2.0.tar.gz -> ansible-12.2.0.tar.gz"
 
 DEPEND=""
 RDEPEND="
@@ -16,6 +16,7 @@ RDEPEND="
 	virtual/ssh
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	dev-python/httplib2[${PYTHON_USEDEP}]
+	dev-python/importlib_resources[${PYTHON_USEDEP}]
 	dev-python/jinja[${PYTHON_USEDEP}]
 	dev-python/netaddr[${PYTHON_USEDEP}]
 	dev-python/paramiko[${PYTHON_USEDEP}]
@@ -26,6 +27,6 @@ BDEPEND="
 	dev-python/packaging"
 IUSE=""
 SLOT="0"
-LICENSE="GPL-3"
+LICENSE="GPL-3+"
 KEYWORDS="*"
-S="${WORKDIR}/ansible_core-2.19.3"
+S="${WORKDIR}/ansible-12.2.0"
