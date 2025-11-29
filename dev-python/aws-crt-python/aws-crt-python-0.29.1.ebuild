@@ -8,7 +8,7 @@ inherit distutils-r1
 DESCRIPTION="Python bindings for the AWS Common Runtime"
 HOMEPAGE="https://github.com/awslabs/aws-crt-python"
 SRC_URI="
-	https://github.com/awslabs/aws-crt-python/tarball/ccb13f8e206959378f04f58f59c61c84042f1a68 -> aws-crt-python-0.29.0-ccb13f8.tar.gz
+	https://github.com/awslabs/aws-crt-python/tarball/51dc34eb375e7657d8a8c01365654cd094b12098 -> aws-crt-python-0.29.1-51dc34e.tar.gz
 	https://github.com/awslabs/aws-c-auth/tarball/672feed19bb91bc389876f49aaa7c538dc879be5 -> aws-c-auth-0.9.2-672feed.tar.gz
 	https://github.com/awslabs/aws-c-cal/tarball/1cb9412158890201a6ffceed779f90fe1f48180c -> aws-c-cal-0.9.13-1cb9412.tar.gz
 	https://github.com/awslabs/aws-c-common/tarball/95515a8b1ff40d5bb14f965ca4cbbe99ad1843df -> aws-c-common-0.12.6-95515a8.tar.gz
