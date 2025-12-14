@@ -1,0 +1,12 @@
+BDEPEND=sys-devel/llvm:* sys-devel/clang:* sys-devel/lld:* dev-util/gn virtual/rust >=virtual/rust-1.37.0
+DEFINED_PHASES=compile configure install test unpack
+DESCRIPTION=A modern runtime for JavaScript and TypeScript.
+EAPI=7
+HOMEPAGE=https://github.com/denoland/deno
+IUSE=debug
+KEYWORDS=*
+LICENSE=MIT
+SLOT=0
+SRC_URI=https://github.com/denoland/deno/tarball/d5b1548eba893d4cc26305f33739a6ca2e6e8c11 -> deno-2.6.0-d5b1548.tar.gz https://direct.funtoo.org/14/c2/39/14c239fa37d7513783f96eb56629694086610121226eeafd701d8c3a3d53e6e21d1797008d615d769b391f3b484e2af79e53cdb042b76189ec8fe8f361d8159b -> deno-2.6.0-funtoo-crates-bundle-f67393c0ea2b89775c56594f64c74045e24ce7075bcd94a0b01dd6faa7efc4de27701dd221b7be2a3e1aba7e5717e2126ed5455ae9edb765dd7b07fa172f9142.tar.gz
+_eclasses_=cargo	a3e90d3e6ca8541d967cff212149cffc	multilib	d410501a125f99ffb560b0c523cd3d1e	multiprocessing	cac3169468f893670dac3e7cb940e045	toolchain-funcs	24921b57d6561d87cbef4916a296ada4
+_md5_=fe84ff941e9a55767eee293b9cd63643
