@@ -10,7 +10,7 @@ inherit php-ext-pecl-r3
 
 KEYWORDS="*"
 
-SRC_URI="https://github.com/php-amqp/php-amqp/tarball/82424ed50eb10cd97777e2aabf0f2a0887faf447 -> php-amqp-2.1.2-82424ed.tar.gz"
+SRC_URI="https://github.com/php-amqp/php-amqp/tarball/f2df48496693f8aa2942fad3606838149deb82ea -> php-amqp-2.2.0-f2df484.tar.gz"
 
 DESCRIPTION="PHP Bindings for AMQP 0-9-1 compatible brokers"
 LICENSE="PHP-3.01"
