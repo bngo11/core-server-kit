@@ -8,7 +8,7 @@ PATCHES=()
 
 DESCRIPTION="Analyzes and Reports on system logs"
 HOMEPAGE="https://sourceforge.net/projects/logwatch/"
-SRC_URI="http://downloads.sourceforge.net/logwatch/logwatch-7.13/logwatch-7.13.tar.gz -> logwatch-7.13.tar.gz"
+SRC_URI="http://downloads.sourceforge.net/logwatch/logwatch-7.14/logwatch-7.14.tar.gz -> logwatch-7.14.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
