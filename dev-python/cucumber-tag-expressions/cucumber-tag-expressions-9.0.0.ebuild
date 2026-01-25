@@ -7,11 +7,11 @@ inherit distutils-r1
 
 DESCRIPTION="Provides a tag-expression parser and evaluation logic for cucumber/behave"
 HOMEPAGE="None https://pypi.org/project/cucumber-tag-expressions/"
-SRC_URI="https://files.pythonhosted.org/packages/5c/34/968703852ad9b8351968212d63d6b7d054951eba678c9792aadfa560f447/cucumber_tag_expressions-8.1.0.tar.gz -> cucumber_tag_expressions-8.1.0.tar.gz"
+SRC_URI="https://files.pythonhosted.org/packages/37/97/61f67f61041c9356686b1098596f436d900fc6c44e63314252da8a60b394/cucumber_tag_expressions-9.0.0.tar.gz -> cucumber_tag_expressions-9.0.0.tar.gz"
 
 DEPEND=""
 IUSE=""
 SLOT="0"
 LICENSE=""
 KEYWORDS="*"
-S="${WORKDIR}/cucumber_tag_expressions-8.1.0"
+S="${WORKDIR}/cucumber_tag_expressions-9.0.0"
