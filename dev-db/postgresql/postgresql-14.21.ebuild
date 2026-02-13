@@ -13,7 +13,7 @@ SLOT=14
 LICENSE="POSTGRESQL GPL-2"
 DESCRIPTION="PostgreSQL RDBMS"
 HOMEPAGE="https://www.postgresql.org/"
-SRC_URI="https://ftp.postgresql.org/pub/source/v14.20/postgresql-14.20.tar.bz2 -> postgresql-14.20.tar.bz2"
+SRC_URI="https://ftp.postgresql.org/pub/source/v14.21/postgresql-14.21.tar.bz2 -> postgresql-14.21.tar.bz2"
 
 IUSE="debug doc icu kerberos ldap llvm lz4 nls pam perl python +readline selinux +server ssl static-libs tcl uuid xml zlib"
 
