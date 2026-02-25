@@ -8,7 +8,7 @@ inherit distutils-r1
 
 DESCRIPTION="Radically simple IT automation"
 HOMEPAGE="https://ansible.com/ https://pypi.org/project/ansible/"
-SRC_URI="https://files.pythonhosted.org/packages/31/47/f9e6efce29415886d80691220e6cba4d3c0d448d1aa074c15007c59cf038/ansible-13.3.0.tar.gz -> ansible-13.3.0.tar.gz"
+SRC_URI="https://files.pythonhosted.org/packages/e9/46/4f064be3a13f1239f259b3e6ebe94d52d609aac430eeaa6a0b36a5ca071d/ansible-13.4.0.tar.gz -> ansible-13.4.0.tar.gz"
 
 DEPEND=""
 RDEPEND="
@@ -29,4 +29,4 @@ IUSE=""
 SLOT="0"
 LICENSE="GPL-3+"
 KEYWORDS="*"
-S="${WORKDIR}/ansible-13.3.0"
+S="${WORKDIR}/ansible-13.4.0"
