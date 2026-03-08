@@ -308,8 +308,8 @@ EGO_SUM=(
 	"github.com/slackhq/nebula v1.10.3/go.mod"
 	"github.com/smallstep/assert v0.0.0-20200723003110-82e2b9b3b262"
 	"github.com/smallstep/assert v0.0.0-20200723003110-82e2b9b3b262/go.mod"
-	"github.com/smallstep/certificates v0.30.0-rc2.0.20260211214201-20608299c29c"
-	"github.com/smallstep/certificates v0.30.0-rc2.0.20260211214201-20608299c29c/go.mod"
+	"github.com/smallstep/certificates v0.30.0-rc3"
+	"github.com/smallstep/certificates v0.30.0-rc3/go.mod"
 	"github.com/smallstep/cli-utils v0.12.2"
 	"github.com/smallstep/cli-utils v0.12.2/go.mod"
 	"github.com/smallstep/go-attestation v0.4.4-0.20241119153605-2306d5b464ca"
@@ -484,10 +484,10 @@ EGO_SUM=(
 	"golang.org/x/net v0.15.0/go.mod"
 	"golang.org/x/net v0.21.0/go.mod"
 	"golang.org/x/net v0.25.0/go.mod"
-	"golang.org/x/net v0.50.0"
-	"golang.org/x/net v0.50.0/go.mod"
-	"golang.org/x/oauth2 v0.34.0"
-	"golang.org/x/oauth2 v0.34.0/go.mod"
+	"golang.org/x/net v0.51.0"
+	"golang.org/x/net v0.51.0/go.mod"
+	"golang.org/x/oauth2 v0.35.0"
+	"golang.org/x/oauth2 v0.35.0/go.mod"
 	"golang.org/x/sync v0.0.0-20190423024810-112230192c58/go.mod"
 	"golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4/go.mod"
 	"golang.org/x/sync v0.1.0/go.mod"
@@ -550,16 +550,16 @@ EGO_SUM=(
 	"golang.org/x/xerrors v0.0.0-20190717185122-a985d3407aa7/go.mod"
 	"gonum.org/v1/gonum v0.16.0"
 	"gonum.org/v1/gonum v0.16.0/go.mod"
-	"google.golang.org/api v0.265.0"
-	"google.golang.org/api v0.265.0/go.mod"
+	"google.golang.org/api v0.266.0"
+	"google.golang.org/api v0.266.0/go.mod"
 	"google.golang.org/genproto v0.0.0-20260128011058-8636f8732409"
 	"google.golang.org/genproto v0.0.0-20260128011058-8636f8732409/go.mod"
 	"google.golang.org/genproto/googleapis/api v0.0.0-20260128011058-8636f8732409"
 	"google.golang.org/genproto/googleapis/api v0.0.0-20260128011058-8636f8732409/go.mod"
-	"google.golang.org/genproto/googleapis/rpc v0.0.0-20260128011058-8636f8732409"
-	"google.golang.org/genproto/googleapis/rpc v0.0.0-20260128011058-8636f8732409/go.mod"
-	"google.golang.org/grpc v1.78.0"
-	"google.golang.org/grpc v1.78.0/go.mod"
+	"google.golang.org/genproto/googleapis/rpc v0.0.0-20260203192932-546029d2fa20"
+	"google.golang.org/genproto/googleapis/rpc v0.0.0-20260203192932-546029d2fa20/go.mod"
+	"google.golang.org/grpc v1.79.1"
+	"google.golang.org/grpc v1.79.1/go.mod"
 	"google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.5.1"
 	"google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.5.1/go.mod"
 	"google.golang.org/protobuf v1.36.11"
@@ -582,8 +582,8 @@ go-module_set_globals
 
 DESCRIPTION="Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS"
 HOMEPAGE="https://caddyserver.com/ https://github.com/caddyserver/caddy"
-SRC_URI="https://github.com/caddyserver/caddy/tarball/cc4b04e157642d35744867f939d37a0d0b010885 -> caddy-2.11.1-cc4b04e.tar.gz
-https://direct.funtoo.org/d4/04/b9/d404b92ce748ec3edfff1f57568bd58dfe9775d2595243ab760d3c115b711a5c44185ff0b377c16d220724e4859dcf75211b1e3fb434fb84f70374253abbb0e2 -> caddy-2.11.1-funtoo-go-bundle-f93d8c4708e01cd0d5e1a61a857172900774a5104a2eaaa824fc89e1ff0e9c6a8bb4e4245f6bcd1bd92b3d3da631dcd3ab0a81bb21af225884cdb9e5366cdf40.tar.gz"
+SRC_URI="https://github.com/caddyserver/caddy/tarball/6b6c131cc2ef307a8a2b3051bf5d054c8da2e010 -> caddy-2.11.2-6b6c131.tar.gz
+https://direct.funtoo.org/8a/44/32/8a443210198826a0591ad575c5bf0dc879ad14f3fbf3708b84d726b256bd12cb647796ca8169f149e616bddcc4aa1c384d121849ef76771c2c8e97486e5e2d7b -> caddy-2.11.2-funtoo-go-bundle-9724101bc0c1c3bcc2b57e3fc15f98af7c1a5e559d0d2514f2a04edccd9e5d817197402d7b52faa236e84aadb33a049f971d3e5caddbde4f0de587f60e2cac7f.tar.gz"
 
 LICENSE="Apache-2.0 BSD ECL-2.0 MIT"
 SLOT="0"
@@ -605,7 +605,7 @@ post_src_unpack() {
 # Upstream reference to set custom compile time Caddy versions:
 # https://github.com/caddyserver/caddy/pull/5072/files
 src_compile() {
-	go build -ldflags '-X github.com/caddyserver/caddy/v2.CustomVersion=v2.11.1-cc4b04e-funtoo' \
+	go build -ldflags '-X github.com/caddyserver/caddy/v2.CustomVersion=v2.11.2-6b6c131-funtoo' \
 	-mod=mod ./cmd/caddy || die "compile failed"
 }
 
