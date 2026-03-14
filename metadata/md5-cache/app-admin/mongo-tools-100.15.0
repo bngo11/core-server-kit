@@ -1,0 +1,14 @@
+BDEPEND=>=dev-lang/go-1.12 app-arch/unzip
+DEFINED_PHASES=compile install postinst prepare unpack
+DESCRIPTION=A high-performance, open source, schema-free document-oriented database
+EAPI=7
+HOMEPAGE=https://www.mongodb.com
+IUSE=sasl ssl
+KEYWORDS=*
+LICENSE=Apache-2.0
+RDEPEND=net-libs/libpcap sasl? ( dev-libs/cyrus-sasl ) ssl? ( dev-libs/openssl:0= )
+RESTRICT=strip
+SLOT=0
+SRC_URI=https://github.com/mongodb/mongo-tools/tarball/57a2120a5fe6b89223b86cbb3d194d17d48e3096 -> mongo-tools-100.15.0-57a2120.tar.gz https://direct.funtoo.org/b5/1c/e4/b51ce44e934093ebf8583e8c0a3b257f4eb293636546d7be9f8ebce12c00da196621c9e37cbe3500e4eb96772334e11e26445be4684f3fb6dc8b08544a03b6b1 -> mongo-tools-100.15.0-funtoo-go-bundle-0df38dc90f2a77d3e85408b88b10a80f0b5f79b6060485b1bcac384c677bfc9265e5a37c0cc48e022a041c9b98f68e81d48c60f92e30dc1cb3b5d3dc587f6d50.tar.gz
+_eclasses_=go-module	cb10a443c46556a15ed035d7a99128e8	xdg-utils	14d00d009167652b1fa363e55effe213
+_md5_=b7697421a597d9054c57f1292a11bc46
