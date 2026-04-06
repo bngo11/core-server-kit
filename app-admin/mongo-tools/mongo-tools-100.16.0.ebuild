@@ -141,8 +141,8 @@ EGO_SUM=(
 	"github.com/smartystreets/goconvey v1.8.1"
 	"github.com/smartystreets/goconvey v1.8.1/go.mod"
 	"github.com/stretchr/objx v0.1.0/go.mod"
-	"github.com/stretchr/testify v1.10.0"
-	"github.com/stretchr/testify v1.10.0/go.mod"
+	"github.com/stretchr/testify v1.11.1"
+	"github.com/stretchr/testify v1.11.1/go.mod"
 	"github.com/urfave/cli/v2 v2.27.2"
 	"github.com/urfave/cli/v2 v2.27.2/go.mod"
 	"github.com/xdg-go/pbkdf2 v1.0.0"
@@ -217,14 +217,14 @@ EGO_SUM=(
 
 go-module_set_globals
 
-SRC_URI="https://github.com/mongodb/mongo-tools/tarball/57a2120a5fe6b89223b86cbb3d194d17d48e3096 -> mongo-tools-100.15.0-57a2120.tar.gz
-https://direct.funtoo.org/b5/1c/e4/b51ce44e934093ebf8583e8c0a3b257f4eb293636546d7be9f8ebce12c00da196621c9e37cbe3500e4eb96772334e11e26445be4684f3fb6dc8b08544a03b6b1 -> mongo-tools-100.15.0-funtoo-go-bundle-0df38dc90f2a77d3e85408b88b10a80f0b5f79b6060485b1bcac384c677bfc9265e5a37c0cc48e022a041c9b98f68e81d48c60f92e30dc1cb3b5d3dc587f6d50.tar.gz"
+SRC_URI="https://github.com/mongodb/mongo-tools/tarball/19a5dc3144213d3ccead91eda1b45245b95e5428 -> mongo-tools-100.16.0-19a5dc3.tar.gz
+https://direct.funtoo.org/03/78/c9/0378c9cea4262af84571d696496d8c9009ae13f0aa9806fa213a030d30a978e5c9b1e09c1509c20d505ab1dc824521490b00d45d25ce03d5dcb40350b7ada16b -> mongo-tools-100.16.0-funtoo-go-bundle-07f4f49a8ad83072276b95ca4096c4e8a8da1d5bde20b1df092cf671d949fcc87d9f98721dedc30a6a95c5882fee9094f1cb0255a641567a6d81f69b78396479.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="*"
 IUSE="sasl ssl"
-S="${WORKDIR}/mongodb-mongo-tools-57a2120"
+S="${WORKDIR}/mongodb-mongo-tools-19a5dc3"
 
 RDEPEND="
 	net-libs/libpcap

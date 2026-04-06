@@ -14,7 +14,7 @@ inherit php-ext-pecl-r3
 
 KEYWORDS="*"
 
-SRC_URI="https://github.com/php/pecl-text-xdiff/tarball/21857dbe38d052ff0313e7a97086afa8a2398a12 -> pecl-text-xdiff-2.1.1-21857db.tar.gz"
+SRC_URI="https://github.com/php/pecl-text-xdiff/tarball/b0688374c58afcafa60cf681e2a12a46143da61e -> pecl-text-xdiff-2.2.0-b068837.tar.gz"
 
 DESCRIPTION="PHP extension for generating diff files"
 LICENSE="PHP-3.01"
