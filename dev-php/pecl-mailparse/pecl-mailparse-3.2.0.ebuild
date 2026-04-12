@@ -17,7 +17,7 @@ inherit php-ext-pecl-r3
 
 KEYWORDS="*"
 
-SRC_URI="https://github.com/php/pecl-mail-mailparse/tarball/458d348abb7c4483d3234b813975b3e28ddf5190 -> pecl-mail-mailparse-3.1.9-458d348.tar.gz"
+SRC_URI="https://github.com/php/pecl-mail-mailparse/tarball/c2ec5a327a0c226c26b0ad985629c6fac5db7b8b -> pecl-mail-mailparse-3.2.0-c2ec5a3.tar.gz"
 
 DESCRIPTION="PHP extension for parsing and working with RFC822 and MIME compliant messages"
 LICENSE="PHP-3.01"
