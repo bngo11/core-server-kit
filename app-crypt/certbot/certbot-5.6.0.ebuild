@@ -8,7 +8,7 @@ inherit distutils-r1
 
 DESCRIPTION="ACME client"
 HOMEPAGE="None https://pypi.org/project/certbot/"
-SRC_URI="https://files.pythonhosted.org/packages/14/aa/5d3ba1a90e2cbb74a3a3f8183a95104deaba08b2dbd14a5c7c377cb028b3/certbot-5.5.0.tar.gz -> certbot-5.5.0.tar.gz"
+SRC_URI="https://files.pythonhosted.org/packages/4b/c0/838942a6c5fb07e42fdf48a5cc306214fd118c98dae673f1fb0b2d1f88ef/certbot-5.6.0.tar.gz -> certbot-5.6.0.tar.gz"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="
@@ -28,4 +28,4 @@ IUSE=""
 SLOT="0"
 LICENSE="Apache-2.0"
 KEYWORDS="*"
-S="${WORKDIR}/certbot-5.5.0"
+S="${WORKDIR}/certbot-5.6.0"

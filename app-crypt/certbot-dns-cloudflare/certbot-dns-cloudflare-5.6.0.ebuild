@@ -4,12 +4,12 @@
 EAPI=7
 PYTHON_COMPAT=( python3+ )
 
-SRC_URI="https://files.pythonhosted.org/packages/7b/81/0ac458c3390e41258587bf1f6b01892703942adc70529804f80143061424/certbot_dns_ovh-5.5.0.tar.gz -> certbot_dns_ovh-5.5.0.tar.gz"
+SRC_URI="https://files.pythonhosted.org/packages/7b/bf/f030d3f509f259e5fe723ec9c6f99d32ebeb967c316a1fc4a44ed52c65fb/certbot_dns_cloudflare-5.6.0.tar.gz -> certbot_dns_cloudflare-5.6.0.tar.gz"
 KEYWORDS="*"
 
 inherit distutils-r1
 
-DESCRIPTION="OVH DNS Authenticator plugin for Certbot"
+DESCRIPTION="Cloudflare DNS Authenticator plugin for Certbot (Let's Encrypt Client)"
 HOMEPAGE="https://github.com/certbot/certbot https://letsencrypt.org/"
 
 LICENSE="Apache-2.0"
@@ -19,8 +19,8 @@ IUSE=""
 CDEPEND=">=dev-python/setuptools-1.0[${PYTHON_USEDEP}]"
 RDEPEND="${CDEPEND}
 	>=app-crypt/certbot-1.1.0[${PYTHON_USEDEP}]
-	>=dev-python/acme-0.31.0[${PYTHON_USEDEP}]
+	>=dev-python/acme-0.29.0[${PYTHON_USEDEP}]
+	>=dev-python/cloudflare-1.5.1[${PYTHON_USEDEP}]
 	dev-python/mock[${PYTHON_USEDEP}]
-	dev-python/zope-interface[${PYTHON_USEDEP}]
-	>=dev-python/dns-lexicon-2.7.14[${PYTHON_USEDEP}]"
+	dev-python/zope-interface[${PYTHON_USEDEP}]"
 DEPEND="${CDEPEND}"

@@ -4,12 +4,12 @@
 EAPI=7
 PYTHON_COMPAT=( python3+ )
 
-SRC_URI="https://files.pythonhosted.org/packages/f9/89/e73b675a08f9451429e5c4f325ccaff28ae472b4a6ea88dbcacf1948f268/certbot_dns_cloudflare-5.5.0.tar.gz -> certbot_dns_cloudflare-5.5.0.tar.gz"
+SRC_URI="https://files.pythonhosted.org/packages/38/f7/1bd6dd63c3d5ef1b2284d2d937324e242143eba7e62515a03926a23f4771/certbot_dns_sakuracloud-5.6.0.tar.gz -> certbot_dns_sakuracloud-5.6.0.tar.gz"
 KEYWORDS="*"
 
 inherit distutils-r1
 
-DESCRIPTION="Cloudflare DNS Authenticator plugin for Certbot (Let's Encrypt Client)"
+DESCRIPTION="Sakura Cloud DNS Authenticator plugin for Certbot"
 HOMEPAGE="https://github.com/certbot/certbot https://letsencrypt.org/"
 
 LICENSE="Apache-2.0"
@@ -19,8 +19,8 @@ IUSE=""
 CDEPEND=">=dev-python/setuptools-1.0[${PYTHON_USEDEP}]"
 RDEPEND="${CDEPEND}
 	>=app-crypt/certbot-1.1.0[${PYTHON_USEDEP}]
-	>=dev-python/acme-0.29.0[${PYTHON_USEDEP}]
-	>=dev-python/cloudflare-1.5.1[${PYTHON_USEDEP}]
+	>=dev-python/acme-0.31.0[${PYTHON_USEDEP}]
 	dev-python/mock[${PYTHON_USEDEP}]
-	dev-python/zope-interface[${PYTHON_USEDEP}]"
+	dev-python/zope-interface[${PYTHON_USEDEP}]
+	>=dev-python/dns-lexicon-2.1.23[${PYTHON_USEDEP}]"
 DEPEND="${CDEPEND}"

@@ -4,12 +4,12 @@
 EAPI=7
 PYTHON_COMPAT=( python3+ )
 
-SRC_URI="https://files.pythonhosted.org/packages/d1/13/e5131903aa1ecdffa597da66e1cdb7087c1e6f5946425ea3744fe55f4c94/certbot_dns_dnsimple-5.5.0.tar.gz -> certbot_dns_dnsimple-5.5.0.tar.gz"
+SRC_URI="https://files.pythonhosted.org/packages/f9/6a/f4a16181822dc071fe618e18503a1023db722bf5b82b4cdaf0ca841ff2d0/certbot_dns_ovh-5.6.0.tar.gz -> certbot_dns_ovh-5.6.0.tar.gz"
 KEYWORDS="*"
 
 inherit distutils-r1
 
-DESCRIPTION="DNSimple DNS Authenticator plugin for Certbot"
+DESCRIPTION="OVH DNS Authenticator plugin for Certbot"
 HOMEPAGE="https://github.com/certbot/certbot https://letsencrypt.org/"
 
 LICENSE="Apache-2.0"
@@ -21,5 +21,6 @@ RDEPEND="${CDEPEND}
 	>=app-crypt/certbot-1.1.0[${PYTHON_USEDEP}]
 	>=dev-python/acme-0.31.0[${PYTHON_USEDEP}]
 	dev-python/mock[${PYTHON_USEDEP}]
-	dev-python/zope-interface[${PYTHON_USEDEP}]"
+	dev-python/zope-interface[${PYTHON_USEDEP}]
+	>=dev-python/dns-lexicon-2.7.14[${PYTHON_USEDEP}]"
 DEPEND="${CDEPEND}"

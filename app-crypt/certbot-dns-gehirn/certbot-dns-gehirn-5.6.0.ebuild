@@ -4,12 +4,12 @@
 EAPI=7
 PYTHON_COMPAT=( python3+ )
 
-SRC_URI="https://files.pythonhosted.org/packages/73/ec/77ea20dd0bac99d60bb5091e311422c657698e621f727ef72870128e893c/certbot_dns_luadns-5.5.0.tar.gz -> certbot_dns_luadns-5.5.0.tar.gz"
+SRC_URI="https://files.pythonhosted.org/packages/31/dc/74af4791451344f961a38a84d98fad90747608a81b54410701a17f78b689/certbot_dns_gehirn-5.6.0.tar.gz -> certbot_dns_gehirn-5.6.0.tar.gz"
 KEYWORDS="*"
 
 inherit distutils-r1
 
-DESCRIPTION="LuaDNS Authenticator plugin for Certbot"
+DESCRIPTION="Gehirn Infrastructure Service DNS Authenticator plugin for Certbot"
 HOMEPAGE="https://github.com/certbot/certbot https://letsencrypt.org/"
 
 LICENSE="Apache-2.0"
@@ -22,5 +22,5 @@ RDEPEND="${CDEPEND}
 	>=dev-python/acme-0.31.0[${PYTHON_USEDEP}]
 	dev-python/mock[${PYTHON_USEDEP}]
 	dev-python/zope-interface[${PYTHON_USEDEP}]
-	>=dev-python/dns-lexicon-2.2.1[${PYTHON_USEDEP}]"
+	>=dev-python/dns-lexicon-2.1.22[${PYTHON_USEDEP}]"
 DEPEND="${CDEPEND}"

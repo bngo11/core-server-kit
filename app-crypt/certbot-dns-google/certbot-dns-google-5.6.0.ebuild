@@ -4,12 +4,12 @@
 EAPI=7
 PYTHON_COMPAT=( python3+ )
 
-SRC_URI="https://files.pythonhosted.org/packages/cb/2b/2454eb9acffcdcb87604daa4da7c6246af9c585e1eac059fe4ee86d91035/certbot_dns_digitalocean-5.5.0.tar.gz -> certbot_dns_digitalocean-5.5.0.tar.gz"
+SRC_URI="https://files.pythonhosted.org/packages/8d/60/426f02024ae75feee5a3a27e0a56f77af9ad77299a8e9afc2ec8af17be3d/certbot_dns_google-5.6.0.tar.gz -> certbot_dns_google-5.6.0.tar.gz"
 KEYWORDS="*"
 
 inherit distutils-r1
 
-DESCRIPTION="DigitalOcean DNS Authenticator plugin for Certbot"
+DESCRIPTION="Google Cloud DNS Authenticator plugin for Certbot"
 HOMEPAGE="https://github.com/certbot/certbot https://letsencrypt.org/"
 
 LICENSE="Apache-2.0"
@@ -20,8 +20,9 @@ CDEPEND=">=dev-python/setuptools-1.0[${PYTHON_USEDEP}]"
 RDEPEND="${CDEPEND}
 	>=app-crypt/certbot-1.1.0[${PYTHON_USEDEP}]
 	>=dev-python/acme-0.29.0[${PYTHON_USEDEP}]
-	>=dev-python/python-digitialocean-1.11[${PYTHON_USEDEP}]
-	dev-python/six[${PYTHON_USEDEP}]
 	dev-python/mock[${PYTHON_USEDEP}]
-	dev-python/zope-interface[${PYTHON_USEDEP}]"
+	dev-python/zope-interface[${PYTHON_USEDEP}]
+	dev-python/httplib2[${PYTHON_USEDEP}]
+	>=dev-python/oauth2client-4.0[${PYTHON_USEDEP}]
+	>=dev-python/google-api-python-client-1.5.5[${PYTHON_USEDEP}]"
 DEPEND="${CDEPEND}"

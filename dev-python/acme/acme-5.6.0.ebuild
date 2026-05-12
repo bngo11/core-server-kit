@@ -8,7 +8,7 @@ inherit distutils-r1
 
 DESCRIPTION="ACME protocol implementation in Python"
 HOMEPAGE="None https://pypi.org/project/acme/"
-SRC_URI="https://files.pythonhosted.org/packages/18/a2/8dcd9f32e68985c08696c66838c21f3aa42089a510bf96b24ebcb9cd4729/acme-5.5.0.tar.gz -> acme-5.5.0.tar.gz"
+SRC_URI="https://files.pythonhosted.org/packages/e5/5e/df38c186bcb5c2fc4827fa373a5c93a55cc0d82842af670e23c1e61c7867/acme-5.6.0.tar.gz -> acme-5.6.0.tar.gz"
 
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]"
 RDEPEND="
@@ -25,4 +25,4 @@ IUSE=""
 SLOT="0"
 LICENSE="Apache-2.0"
 KEYWORDS="*"
-S="${WORKDIR}/acme-5.5.0"
+S="${WORKDIR}/acme-5.6.0"

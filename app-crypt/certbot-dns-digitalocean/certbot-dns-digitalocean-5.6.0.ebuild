@@ -4,12 +4,12 @@
 EAPI=7
 PYTHON_COMPAT=( python3+ )
 
-SRC_URI="https://files.pythonhosted.org/packages/b6/ff/c5347a14271f57157bee1f4090a80467230c327e116cd8a67f0b44cd54d1/certbot_dns_sakuracloud-5.5.0.tar.gz -> certbot_dns_sakuracloud-5.5.0.tar.gz"
+SRC_URI="https://files.pythonhosted.org/packages/6d/bc/914ff413ed2021f616fb69e50242521e09af2710dfc330b300f81e2c31b1/certbot_dns_digitalocean-5.6.0.tar.gz -> certbot_dns_digitalocean-5.6.0.tar.gz"
 KEYWORDS="*"
 
 inherit distutils-r1
 
-DESCRIPTION="Sakura Cloud DNS Authenticator plugin for Certbot"
+DESCRIPTION="DigitalOcean DNS Authenticator plugin for Certbot"
 HOMEPAGE="https://github.com/certbot/certbot https://letsencrypt.org/"
 
 LICENSE="Apache-2.0"
@@ -19,8 +19,9 @@ IUSE=""
 CDEPEND=">=dev-python/setuptools-1.0[${PYTHON_USEDEP}]"
 RDEPEND="${CDEPEND}
 	>=app-crypt/certbot-1.1.0[${PYTHON_USEDEP}]
-	>=dev-python/acme-0.31.0[${PYTHON_USEDEP}]
+	>=dev-python/acme-0.29.0[${PYTHON_USEDEP}]
+	>=dev-python/python-digitialocean-1.11[${PYTHON_USEDEP}]
+	dev-python/six[${PYTHON_USEDEP}]
 	dev-python/mock[${PYTHON_USEDEP}]
-	dev-python/zope-interface[${PYTHON_USEDEP}]
-	>=dev-python/dns-lexicon-2.1.23[${PYTHON_USEDEP}]"
+	dev-python/zope-interface[${PYTHON_USEDEP}]"
 DEPEND="${CDEPEND}"
