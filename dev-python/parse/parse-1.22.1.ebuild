@@ -7,11 +7,11 @@ inherit distutils-r1
 
 DESCRIPTION="parse() is the opposite of format()"
 HOMEPAGE="None https://pypi.org/project/parse/"
-SRC_URI="https://files.pythonhosted.org/packages/7b/a2/dd269daedd5ac3a244ca7855b4878d8655393fd4554d5c24a56bc31e302a/parse-1.22.0.tar.gz -> parse-1.22.0.tar.gz"
+SRC_URI="https://files.pythonhosted.org/packages/a4/f2/0b504486c2a5564798607d3860e48ed19c6443d5e9cc3ec61cc6b8b4ef58/parse-1.22.1.tar.gz -> parse-1.22.1.tar.gz"
 
 DEPEND=""
 IUSE=""
 SLOT="0"
 LICENSE="MIT"
 KEYWORDS="*"
-S="${WORKDIR}/parse-1.22.0"
+S="${WORKDIR}/parse-1.22.1"
