@@ -1,0 +1,12 @@
+BDEPEND=test? ( app-crypt/gnupg dev-lang/php:*[posix,unicode] dev-php/PEAR-Console_CommandLine dev-php/PEAR-Exception dev-php/phpunit )
+DEFINED_PHASES=install prepare test
+DESCRIPTION=PHP interface to the GNU Privacy Guard (GnuPG)
+EAPI=7
+HOMEPAGE=http://pear.php.net/package/Crypt_GPG
+IUSE=test
+KEYWORDS=*
+LICENSE=LGPL-2.1
+RDEPEND=app-crypt/gnupg dev-lang/php:*[posix,unicode] dev-php/PEAR-Console_CommandLine dev-php/PEAR-Exception
+SLOT=0
+SRC_URI=https://github.com/pear/Crypt_GPG/tarball/236aba44a45ce73d838377fe095169af4f4f0858 -> Crypt_GPG-1.8.0-236aba4.tar.gz
+_md5_=10eb5a0c1ddc37f3882099faa67b9a29

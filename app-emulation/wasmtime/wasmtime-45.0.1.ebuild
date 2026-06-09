@@ -7,7 +7,7 @@ inherit cargo
 DESCRIPTION="A lightweight WebAssembly runtime that is fast, secure, and standards-compliant"
 HOMEPAGE="https://github.com/bytecodealliance/wasmtime https://docs.wasmtime.dev"
 SRC_URI="https://github.com/bytecodealliance/wasmtime/releases/download/v45.0.1/wasmtime-v45.0.1-src.tar.gz -> wasmtime-v45.0.1-src.tar.gz
-https://direct.funtoo.org/4d/a7/bf/4da7bf471011a8345564372c26810a0e1d23e86fc9f5570d508fd078234eec3c9316e6670ecae891ed45599979d7dd42cc4253c8727486ba3c963203b44faeb9 -> wasmtime-45.0.1-funtoo-crates-bundle-8ccd980d0b9758cda5872dafcb5820d46896effd00aff6c47076fa232325fdf2d88c869468d02f84c721e159778737c478a5433c95f9c78e07d87294919632d1.tar.gz"
+https://direct.funtoo.org/ae/9f/e4/ae9fe4e47ef93639b8044e98170c9cb31ad10ae600f060e1d850414537bf38930d2672a2525416ee7ce796e66521c1b2f4edb0fe6d0bf201383e9e253d87dad7 -> wasmtime-45.0.1-funtoo-crates-bundle-8ccd980d0b9758cda5872dafcb5820d46896effd00aff6c47076fa232325fdf2d88c869468d02f84c721e159778737c478a5433c95f9c78e07d87294919632d1.tar.gz"
 
 LICENSE="Apache-2.0 Boost-1.0 BSD BSD-2 CC0-1.0 ISC LGPL-3+ MIT Apache-2.0 Unlicense ZLIB"
 SLOT="0"
