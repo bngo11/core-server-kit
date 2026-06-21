@@ -12,7 +12,7 @@ inherit php-ext-pecl-r3
 
 KEYWORDS="*"
 
-SRC_URI="https://github.com/php/pecl-web_services-oauth/tarball/8da93b5fda577d036f0bc3651194ef68446f5685 -> pecl-web_services-oauth-2.0.12-8da93b5.tar.gz"
+SRC_URI="https://github.com/php/pecl-web_services-oauth/tarball/f524860cba69b9655bf3836628b3d4fe385ab74c -> pecl-web_services-oauth-2.0.13-f524860.tar.gz"
 
 DESCRIPTION="OAuth is an authorization protocol built on top of HTTP"
 LICENSE="BSD"
