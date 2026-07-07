@@ -138,8 +138,8 @@ EGO_SUM=(
 	"github.com/inconshreveable/mousetrap v1.1.0/go.mod"
 	"github.com/keybase/go-keychain v0.0.1"
 	"github.com/keybase/go-keychain v0.0.1/go.mod"
-	"github.com/klauspost/compress v1.18.4"
-	"github.com/klauspost/compress v1.18.4/go.mod"
+	"github.com/klauspost/compress v1.18.6"
+	"github.com/klauspost/compress v1.18.6/go.mod"
 	"github.com/klauspost/cpuid/v2 v2.0.1/go.mod"
 	"github.com/klauspost/cpuid/v2 v2.2.11"
 	"github.com/klauspost/cpuid/v2 v2.2.11/go.mod"
@@ -347,8 +347,8 @@ EGO_SUM=(
 
 DESCRIPTION="A backup program that is fast, efficient and secure"
 HOMEPAGE="https://restic.github.io/"
-SRC_URI="https://github.com/restic/restic/tarball/03c5fd7a97fa7009f5986e35ab1ca2bbfde83096 -> restic-0.19.0-03c5fd7.tar.gz
-https://direct.funtoo.org/83/49/bf/8349bf16a612a8143273c98613d444dff123be032b616e86c6f432ead6e1da828c233e44c6999358c14610ee1051d5321bd64355832cd7d381d7c1839a0d3e6b -> restic-0.19.0-funtoo-go-bundle-ec6b5cefa6570e7e213937f193ad72954e152603e607b6c80a8011e91225bc0d0a721b95a7391cac11fd4cec7fc5e6218de12f9dd03132ab63da3f931b177ac6.tar.gz"
+SRC_URI="https://github.com/restic/restic/tarball/6099d4b5c4376368d42b9982c7d3e93ba13d83b1 -> restic-0.19.1-6099d4b.tar.gz
+https://direct.funtoo.org/0a/d1/54/0ad15442cceb6db69509c84be6eb5a0c1fa8caceebd94e3aa585eeb4127af64aa9c95018d4908695c763697258592ccb67c0debb6ad72856ddde5cd68f0ae56c -> restic-0.19.1-funtoo-go-bundle-5a3f21152f195dd7557f12435fab01e1bf546caa2437ffe488fadfe10684c5868ce288f8f612b65cd66fcc941701e2e39f2fc97722701168d3eeded88729e11a.tar.gz"
 
 LICENSE="Apache-2.0 BSD BSD-2 LGPL-3-with-linking-exception MIT"
 SLOT="0"
@@ -362,7 +362,7 @@ post_src_unpack() {
 }
 
 src_compile() {
-	go build -ldflags '-X main.version=0.19.0' \
+	go build -ldflags '-X main.version=0.19.1' \
 		-asmflags "-trimpath=${S}" \
 		-gcflags "-trimpath=${S}" \
 		-o restic ./cmd/restic
