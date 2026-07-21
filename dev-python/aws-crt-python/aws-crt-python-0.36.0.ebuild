@@ -11,7 +11,7 @@ SRC_URI="
 	https://github.com/awslabs/aws-crt-python/tarball/5e7eef180f56818a3777d644f97b5478f02bd7c9 -> aws-crt-python-0.36.0-5e7eef1.tar.gz
 	https://github.com/awslabs/aws-c-auth/tarball/4b5d524bf1a511b05e0fffe5bdc51800770b9427 -> aws-c-auth-0.10.4-4b5d524.tar.gz
 	https://github.com/awslabs/aws-c-cal/tarball/9edd8eac2b21ca6a04535b91d60d361c2f1bb60f -> aws-c-cal-0.9.14-9edd8ea.tar.gz
-	https://github.com/awslabs/aws-c-common/tarball/a9d57d2d372582fa18bf1d81741e107c59a23226 -> aws-c-common-0.14.2-a9d57d2.tar.gz
+	https://github.com/awslabs/aws-c-common/tarball/3c69b871dfa1815231802febf1bb6899f84cccdb -> aws-c-common-0.14.3-3c69b87.tar.gz
 	https://github.com/awslabs/aws-c-compression/tarball/d8264e64f698341eb03039b96b4f44702a9b3f83 -> aws-c-compression-0.3.2-d8264e6.tar.gz
 	https://github.com/awslabs/aws-c-event-stream/tarball/51bef3c44e1058b1689751539170b2e0f589ccdb -> aws-c-event-stream-0.7.1-51bef3c.tar.gz
 	https://github.com/awslabs/aws-c-http/tarball/8aefd899fc3210bfd0e3fd414011a3cb708bf6e4 -> aws-c-http-0.11.0-8aefd89.tar.gz
