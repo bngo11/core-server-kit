@@ -10,7 +10,7 @@ inherit waf-utils python-single-r1
 
 DESCRIPTION="Samba talloc library"
 HOMEPAGE="https://talloc.samba.org/"
-SRC_URI="https://download.samba.org/pub/talloc/talloc-2.4.4.tar.gz -> talloc-2.4.4.tar.gz"
+SRC_URI="https://download.samba.org/pub/talloc/talloc-2.5.0.tar.gz -> talloc-2.5.0.tar.gz"
 
 LICENSE="GPL-3 LGPL-3+ LGPL-2"
 SLOT="0"

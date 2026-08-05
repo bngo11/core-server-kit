@@ -8,5 +8,5 @@ KEYWORDS=*
 LICENSE=LGPL-2.1
 RDEPEND=app-crypt/gnupg dev-lang/php:*[posix,unicode] dev-php/PEAR-Console_CommandLine dev-php/PEAR-Exception
 SLOT=0
-SRC_URI=https://github.com/pear/Crypt_GPG/tarball/0d5acc2a4e4a53822fa821a1ab08d158702d8494 -> Crypt_GPG-1.9.0-0d5acc2.tar.gz
-_md5_=b984c4f64b8ef7b60e5998c6a9fc574a
+SRC_URI=https://github.com/pear/Crypt_GPG/tarball/7024573e03fddd1bf744e93da576efe35da15a32 -> Crypt_GPG-2.0.0-7024573.tar.gz
+_md5_=84ed4cb3404a9247039d1667982f084d
