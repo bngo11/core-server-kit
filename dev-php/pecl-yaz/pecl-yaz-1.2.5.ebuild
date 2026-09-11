@@ -13,7 +13,7 @@ inherit php-ext-pecl-r3
 
 KEYWORDS="*"
 
-SRC_URI="https://github.com/indexdata/phpyaz/tarball/3012ef17a4f84042a532aeeccd9f01e8e50b6850 -> phpyaz-1.2.4-3012ef1.tar.gz"
+SRC_URI="https://github.com/indexdata/phpyaz/tarball/62e13b7a372c8efb7ca095f0871f0a4df5ed821a -> phpyaz-1.2.5-62e13b7.tar.gz"
 
 DESCRIPTION="This extension implements a Z39.50 client for PHP using the YAZ toolkit"
 LICENSE="BSD"
