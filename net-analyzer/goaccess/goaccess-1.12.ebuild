@@ -6,7 +6,7 @@ inherit autotools systemd tmpfiles user
 
 DESCRIPTION="A real-time web log analyzer and interactive viewer in a terminal"
 HOMEPAGE="https://goaccess.io"
-SRC_URI="https://github.com/allinurl/goaccess/tarball/615490d44e43544ec778e0841047772d313f14b3 -> goaccess-1.11-615490d.tar.gz" 
+SRC_URI="https://github.com/allinurl/goaccess/tarball/ef3c4f3c3e42b378e705fb3a1a5ef1c2e72e6348 -> goaccess-1.12-ef3c4f3.tar.gz" 
 
 LICENSE="MIT"
 SLOT="0"
