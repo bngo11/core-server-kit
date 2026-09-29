@@ -206,14 +206,14 @@ EGO_SUM=(
 
 go-module_set_globals
 
-SRC_URI="https://github.com/mongodb/mongo-tools/tarball/a93207a1cecc31456ac31678c0406b68c5c929aa -> mongo-tools-100.19.0-a93207a.tar.gz
-https://direct.funtoo.org/a3/78/bc/a378bc774e85045f970d38f6fdd6cccb464331d4c40ce94c4b2f8fcef442ea3690bdbdb6c7a5c18877c17d5129e2b4607a8bc43cb97479af71fdae1de72fc124 -> mongo-tools-100.19.0-funtoo-go-bundle-f179cc1d64e4e224ae49584ee9a8095a9291d9ec8e8fd3f175d276937c0752f89acb9121c66de508a0f2f93cca6026648f4bd10e9ab8bb5865a7dc4a2f2bc95d.tar.gz"
+SRC_URI="https://github.com/mongodb/mongo-tools/tarball/9348e032419d906e40966f477278cce647b9b1eb -> mongo-tools-100.19.1-9348e03.tar.gz
+https://direct.funtoo.org/94/3e/18/943e18f10acb3578e89aa51214d5675ebae95fad974ac99c8794407e61a39b236b9f39403cb9fee427b072bfeb316c6f13d346c446b8319eb705b49cc19be50e -> mongo-tools-100.19.1-funtoo-go-bundle-f179cc1d64e4e224ae49584ee9a8095a9291d9ec8e8fd3f175d276937c0752f89acb9121c66de508a0f2f93cca6026648f4bd10e9ab8bb5865a7dc4a2f2bc95d.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="*"
 IUSE="sasl ssl"
-S="${WORKDIR}/mongodb-mongo-tools-a93207a"
+S="${WORKDIR}/mongodb-mongo-tools-9348e03"
 
 RDEPEND="
 	net-libs/libpcap
