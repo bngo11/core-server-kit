@@ -162,8 +162,8 @@ EGO_SUM=(
 	"github.com/fsnotify/fsnotify v1.4.7/go.mod"
 	"github.com/fxamacker/cbor/v2 v2.9.4"
 	"github.com/fxamacker/cbor/v2 v2.9.4/go.mod"
-	"github.com/go-chi/chi/v5 v5.3.2"
-	"github.com/go-chi/chi/v5 v5.3.2/go.mod"
+	"github.com/go-chi/chi/v5 v5.4.0"
+	"github.com/go-chi/chi/v5 v5.4.0/go.mod"
 	"github.com/go-jose/go-jose/v3 v3.0.5"
 	"github.com/go-jose/go-jose/v3 v3.0.5/go.mod"
 	"github.com/go-jose/go-jose/v4 v4.1.5"
@@ -479,8 +479,8 @@ EGO_SUM=(
 	"golang.org/x/crypto v0.33.0/go.mod"
 	"golang.org/x/crypto v0.57.0"
 	"golang.org/x/crypto v0.57.0/go.mod"
-	"golang.org/x/crypto/x509roots/fallback v0.0.0-20260929172509-b39ff6d641ec"
-	"golang.org/x/crypto/x509roots/fallback v0.0.0-20260929172509-b39ff6d641ec/go.mod"
+	"golang.org/x/crypto/x509roots/fallback v0.0.0-20261030153154-30a33513ff6d"
+	"golang.org/x/crypto/x509roots/fallback v0.0.0-20261030153154-30a33513ff6d/go.mod"
 	"golang.org/x/exp v0.0.0-20260908205506-85c1c2202aba"
 	"golang.org/x/exp v0.0.0-20260908205506-85c1c2202aba/go.mod"
 	"golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4/go.mod"
@@ -488,6 +488,8 @@ EGO_SUM=(
 	"golang.org/x/mod v0.12.0/go.mod"
 	"golang.org/x/mod v0.15.0/go.mod"
 	"golang.org/x/mod v0.17.0/go.mod"
+	"golang.org/x/mod v0.41.0"
+	"golang.org/x/mod v0.41.0/go.mod"
 	"golang.org/x/net v0.0.0-20190620200207-3b0461eec859/go.mod"
 	"golang.org/x/net v0.0.0-20210226172049-e18ecbb05110/go.mod"
 	"golang.org/x/net v0.0.0-20220722155237-a158d28d115b/go.mod"
@@ -497,8 +499,8 @@ EGO_SUM=(
 	"golang.org/x/net v0.21.0/go.mod"
 	"golang.org/x/net v0.25.0/go.mod"
 	"golang.org/x/net v0.34.0/go.mod"
-	"golang.org/x/net v0.59.0"
-	"golang.org/x/net v0.59.0/go.mod"
+	"golang.org/x/net v0.60.0"
+	"golang.org/x/net v0.60.0/go.mod"
 	"golang.org/x/oauth2 v0.37.0"
 	"golang.org/x/oauth2 v0.37.0/go.mod"
 	"golang.org/x/sync v0.0.0-20190423024810-112230192c58/go.mod"
@@ -561,6 +563,8 @@ EGO_SUM=(
 	"golang.org/x/tools v0.6.0/go.mod"
 	"golang.org/x/tools v0.13.0/go.mod"
 	"golang.org/x/tools v0.21.1-0.20240508182429-e35e4ccd0d2d/go.mod"
+	"golang.org/x/tools v0.50.0"
+	"golang.org/x/tools v0.50.0/go.mod"
 	"golang.org/x/xerrors v0.0.0-20190717185122-a985d3407aa7/go.mod"
 	"gonum.org/v1/gonum v0.17.0"
 	"gonum.org/v1/gonum v0.17.0/go.mod"
@@ -596,8 +600,8 @@ go-module_set_globals
 
 DESCRIPTION="Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS"
 HOMEPAGE="https://caddyserver.com/ https://github.com/caddyserver/caddy"
-SRC_URI="https://github.com/caddyserver/caddy/tarball/87c43dc4f54861ec7e54302cfb2ad3e34508b6dc -> caddy-2.11.7-87c43dc.tar.gz
-https://direct.funtoo.org/01/7b/ed/017bed27402058280c1936c1547cc2f1d881a59d0eb6348f9cbd2dffbb7437b7e27cf37fa61ddf413756be3975853fa3c628a0a43daa8b89e8a6104a4112c969 -> caddy-2.11.7-funtoo-go-bundle-0a99abf1e55f8ba336e958b4a17fcec8f9680496d7c6032c961b6cf4825780b48a3471384be7d3ee6c0dc4f4288967d786020273d78edf3dae412916b19d57f0.tar.gz"
+SRC_URI="https://github.com/caddyserver/caddy/tarball/df774035bdfb4f8ac87e27d7ee2f728f575047b4 -> caddy-2.11.8-df77403.tar.gz
+https://direct.funtoo.org/fe/01/c5/fe01c5e3e0e9bff29c8bb1f2f55cb4eb1a63a583d5164154a12aaf4a81e562e23b23d41a93728bd0240b50b5519b1f00c948ad8ac47d95f921741b02acd5e9d7 -> caddy-2.11.8-funtoo-go-bundle-d328ada7c7cb38220cba09dd3254b4e9dc9e47e3c908508eabf1b4f56f3ebe49f82ec6e43693cffb871e109df8ab60c86335a8bd14d5eedc9a24877e0ae3293b.tar.gz"
 
 LICENSE="Apache-2.0 BSD ECL-2.0 MIT"
 SLOT="0"
@@ -619,7 +623,7 @@ post_src_unpack() {
 # Upstream reference to set custom compile time Caddy versions:
 # https://github.com/caddyserver/caddy/pull/5072/files
 src_compile() {
-	go build -ldflags '-X github.com/caddyserver/caddy/v2.CustomVersion=v2.11.7-87c43dc-funtoo' \
+	go build -ldflags '-X github.com/caddyserver/caddy/v2.CustomVersion=v2.11.8-df77403-funtoo' \
 	-mod=mod ./cmd/caddy || die "compile failed"
 }
 

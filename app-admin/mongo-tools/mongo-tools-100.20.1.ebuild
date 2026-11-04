@@ -73,12 +73,13 @@ EGO_SUM=(
 	"github.com/cpuguy83/go-md2man/v2 v2.0.7/go.mod"
 	"github.com/craiggwilson/goke v0.0.0-20240206162536-b1c58122d943"
 	"github.com/craiggwilson/goke v0.0.0-20240206162536-b1c58122d943/go.mod"
-	"github.com/creack/pty v1.1.9/go.mod"
 	"github.com/davecgh/go-spew v1.1.0/go.mod"
 	"github.com/davecgh/go-spew v1.1.1"
 	"github.com/davecgh/go-spew v1.1.1/go.mod"
 	"github.com/deckarep/golang-set/v3 v3.0.0"
 	"github.com/deckarep/golang-set/v3 v3.0.0/go.mod"
+	"github.com/goccy/go-yaml v1.19.2"
+	"github.com/goccy/go-yaml v1.19.2/go.mod"
 	"github.com/golang-jwt/jwt/v5 v5.3.1"
 	"github.com/golang-jwt/jwt/v5 v5.3.1/go.mod"
 	"github.com/google/go-cmp v0.7.0"
@@ -99,10 +100,6 @@ EGO_SUM=(
 	"github.com/keybase/go-keychain v0.0.1/go.mod"
 	"github.com/klauspost/compress v1.20.3"
 	"github.com/klauspost/compress v1.20.3/go.mod"
-	"github.com/kr/pretty v0.3.1"
-	"github.com/kr/pretty v0.3.1/go.mod"
-	"github.com/kr/text v0.2.0"
-	"github.com/kr/text v0.2.0/go.mod"
 	"github.com/kylelemons/godebug v1.1.0"
 	"github.com/kylelemons/godebug v1.1.0/go.mod"
 	"github.com/mattn/go-colorable v0.0.9/go.mod"
@@ -126,8 +123,6 @@ EGO_SUM=(
 	"github.com/pkg/errors v0.9.1/go.mod"
 	"github.com/pmezard/go-difflib v1.0.0"
 	"github.com/pmezard/go-difflib v1.0.0/go.mod"
-	"github.com/rogpeppe/go-internal v1.12.0"
-	"github.com/rogpeppe/go-internal v1.12.0/go.mod"
 	"github.com/russross/blackfriday/v2 v2.1.0"
 	"github.com/russross/blackfriday/v2 v2.1.0/go.mod"
 	"github.com/samber/lo v1.53.0"
@@ -205,25 +200,20 @@ EGO_SUM=(
 	"golang.org/x/tools v0.1.12/go.mod"
 	"golang.org/x/xerrors v0.0.0-20190717185122-a985d3407aa7/go.mod"
 	"gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod"
-	"gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c"
-	"gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c/go.mod"
+	"gopkg.in/yaml.v2 v2.2.8"
 	"gopkg.in/yaml.v2 v2.2.8/go.mod"
-	"gopkg.in/yaml.v2 v2.4.0"
-	"gopkg.in/yaml.v2 v2.4.0/go.mod"
-	"gopkg.in/yaml.v3 v3.0.1"
-	"gopkg.in/yaml.v3 v3.0.1/go.mod"
 )
 
 go-module_set_globals
 
-SRC_URI="https://github.com/mongodb/mongo-tools/tarball/7536fd7f3d67f5115de3eb2e271b327b7ce329b9 -> mongo-tools-100.20.0-7536fd7.tar.gz
-https://direct.funtoo.org/55/0d/70/550d70bc07de55493bc71191716daf8db5f2855906c3be86a79125ca54ca902d8c978e57ce5b11a6957fb5feadc48f41dae16b7586a3f504583f18f37043cd70 -> mongo-tools-100.20.0-funtoo-go-bundle-052b7434e482be346fc81d1281604f748aab11d803c9f88ec2eaaa7df6c75f2f803faeb1465919915ebbe5a34bc581071f673e1ddb84adb3908038311dbc50a4.tar.gz"
+SRC_URI="https://github.com/mongodb/mongo-tools/tarball/99fd6bc7140e31e0287a9b4ef7e03194d834c7f0 -> mongo-tools-100.20.1-99fd6bc.tar.gz
+https://direct.funtoo.org/3f/4a/b1/3f4ab1cf273846d1cf40240e1186dc05c8d1b597f01a292c75099588f005544ece068ae883e0c4a212fc47bc4133912ac3ee5667c5f0b902b4c5b3c05435cb02 -> mongo-tools-100.20.1-funtoo-go-bundle-438424255de22977405addc3c1fbf9235153a31f3cc50a864058fe163b62eabbe787139c85ba74ed68053a03d4ebf0ab6fe725b12a936c9c9f0b1dbf9c285f58.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="*"
 IUSE="sasl ssl"
-S="${WORKDIR}/mongodb-mongo-tools-7536fd7"
+S="${WORKDIR}/mongodb-mongo-tools-99fd6bc"
 
 RDEPEND="
 	net-libs/libpcap
