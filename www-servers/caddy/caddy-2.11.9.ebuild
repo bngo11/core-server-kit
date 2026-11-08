@@ -166,8 +166,8 @@ EGO_SUM=(
 	"github.com/go-chi/chi/v5 v5.4.0/go.mod"
 	"github.com/go-jose/go-jose/v3 v3.0.5"
 	"github.com/go-jose/go-jose/v3 v3.0.5/go.mod"
-	"github.com/go-jose/go-jose/v4 v4.1.5"
-	"github.com/go-jose/go-jose/v4 v4.1.5/go.mod"
+	"github.com/go-jose/go-jose/v4 v4.1.6"
+	"github.com/go-jose/go-jose/v4 v4.1.6/go.mod"
 	"github.com/go-logr/logr v1.2.2/go.mod"
 	"github.com/go-logr/logr v1.4.4"
 	"github.com/go-logr/logr v1.4.4/go.mod"
@@ -600,8 +600,8 @@ go-module_set_globals
 
 DESCRIPTION="Fast and extensible multi-platform HTTP/1-2-3 web server with automatic HTTPS"
 HOMEPAGE="https://caddyserver.com/ https://github.com/caddyserver/caddy"
-SRC_URI="https://github.com/caddyserver/caddy/tarball/df774035bdfb4f8ac87e27d7ee2f728f575047b4 -> caddy-2.11.8-df77403.tar.gz
-https://direct.funtoo.org/fe/01/c5/fe01c5e3e0e9bff29c8bb1f2f55cb4eb1a63a583d5164154a12aaf4a81e562e23b23d41a93728bd0240b50b5519b1f00c948ad8ac47d95f921741b02acd5e9d7 -> caddy-2.11.8-funtoo-go-bundle-d328ada7c7cb38220cba09dd3254b4e9dc9e47e3c908508eabf1b4f56f3ebe49f82ec6e43693cffb871e109df8ab60c86335a8bd14d5eedc9a24877e0ae3293b.tar.gz"
+SRC_URI="https://github.com/caddyserver/caddy/tarball/a356e5048bf0059a7b7bdc10f7823d410bd8d86b -> caddy-2.11.9-a356e50.tar.gz
+https://direct.funtoo.org/6a/92/96/6a929603eb8334a47a0270f0c74e9f990d4fe757970db93f86bdcc38421466bb9bcaf2addb5b5a93451b63c54c3685a92a9d4cd96ee6b0ce33c136008ce590b3 -> caddy-2.11.9-funtoo-go-bundle-1f1bfa5e8fb089695db168b8be1393b672b1d857fa890a245d46f027fdbe9140974df6132f0973e21e8515d64a01a0e94248d4a0b5dca0e2600c8fd90e9aa0d2.tar.gz"
 
 LICENSE="Apache-2.0 BSD ECL-2.0 MIT"
 SLOT="0"
@@ -623,7 +623,7 @@ post_src_unpack() {
 # Upstream reference to set custom compile time Caddy versions:
 # https://github.com/caddyserver/caddy/pull/5072/files
 src_compile() {
-	go build -ldflags '-X github.com/caddyserver/caddy/v2.CustomVersion=v2.11.8-df77403-funtoo' \
+	go build -ldflags '-X github.com/caddyserver/caddy/v2.CustomVersion=v2.11.9-a356e50-funtoo' \
 	-mod=mod ./cmd/caddy || die "compile failed"
 }
 
